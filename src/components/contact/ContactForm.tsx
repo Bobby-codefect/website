@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import type { ContactFormData } from "@/types/contact";
-import { isEmailValid } from "@/lib/contact/contact-validation";
+import { validateContactForm } from "@/lib/contact/contact-validation";
 
 export default function ContactForm() {
     const [formData, setFormData] = useState<ContactFormData>({
@@ -37,13 +37,10 @@ export default function ContactForm() {
         setMessageSucces("");
         setMessageErreur("");
 
-        if (!formData.nom || !formData.email || !formData.message) {
-            setMessageErreur("Tous les champs sont obligatoires.");
-            return;
-        }
+        const validationError = validateContactForm(formData);
 
-        if (!isEmailValid(formData.email)) {
-            setMessageErreur("Veuillez saisir une adresse email valide.");
+        if (validationError) {
+            setMessageErreur(validationError);
             return;
         }
 

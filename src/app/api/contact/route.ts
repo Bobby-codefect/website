@@ -1,24 +1,16 @@
 import { NextResponse } from "next/server";
 import type { ContactFormData } from "@/types/contact";
-import { isEmailValid } from "@/lib/contact/contact-validation";
-
+import { validateContactForm } from "@/lib/contact/contact-validation";
 
 export async function POST(request: Request) {
     try {
         const body: ContactFormData = await request.json();
 
-        const { nom, email, message } = body;
+        const validationError = validateContactForm(body);
 
-        if (!nom || !email || !message) {
+        if (validationError) {
             return NextResponse.json(
-                { message: "Tous les champs sont obligatoires." },
-                { status: 400 }
-            );
-        }
-
-        if (!isEmailValid(email)) {
-            return NextResponse.json(
-                { message: "Veuillez saisir une adresse email valide." },
+                { message: validationError },
                 { status: 400 }
             );
         }
