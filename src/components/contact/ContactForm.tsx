@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { ContactFormData } from "@/types/contact";
+import { isEmailValid } from "@/lib/contact/contact-validation";
 
 export default function ContactForm() {
     const [formData, setFormData] = useState<ContactFormData>({
@@ -13,10 +14,6 @@ export default function ContactForm() {
     const [messageSucces, setMessageSucces] = useState("");
     const [messageErreur, setMessageErreur] = useState("");
     const [isLoading, setIsLoading] = useState(false);
-
-    function isEmailValid(email: string) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
 
     function handleChange(
         event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>

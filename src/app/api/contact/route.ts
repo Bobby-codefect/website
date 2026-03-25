@@ -1,9 +1,7 @@
 import { NextResponse } from "next/server";
 import type { ContactFormData } from "@/types/contact";
+import { isEmailValid } from "@/lib/contact/contact-validation";
 
-function isEmailValid(email: string) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
 
 export async function POST(request: Request) {
     try {
