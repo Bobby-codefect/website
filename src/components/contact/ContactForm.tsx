@@ -1,12 +1,7 @@
 "use client";
 
 import { useState } from "react";
-
-type ContactFormData = {
-    nom: string;
-    email: string;
-    message: string;
-};
+import type { ContactFormData } from "@/types/contact";
 
 export default function ContactForm() {
     const [formData, setFormData] = useState<ContactFormData>({
@@ -17,6 +12,7 @@ export default function ContactForm() {
 
     const [messageSucces, setMessageSucces] = useState("");
     const [messageErreur, setMessageErreur] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
 
     function handleChange(
         event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -29,7 +25,9 @@ export default function ContactForm() {
         }));
     }
 
-    function handleSubmit(event: React.SubmitEvent) {
+    const handleSubmit: React.SubmitEventHandler<HTMLFormElement> = async (
+        event
+    ) => {
         event.preventDefault();
 
         setMessageSucces("");
@@ -40,9 +38,36 @@ export default function ContactForm() {
             return;
         }
 
-        setMessageSucces("Le formulaire est prêt à être envoyé.");
-        console.log("Données du formulaire :", formData);
-    }
+        try {
+            setIsLoading(true);
+
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                setMessageErreur(data.message || "Une erreur est survenue.");
+                return;
+            }
+
+            setMessageSucces(data.message || "Message envoyé avec succès.");
+            setFormData({
+                nom: "",
+                email: "",
+                message: "",
+            });
+        } catch {
+            setMessageErreur("Impossible de contacter le serveur.");
+        } finally {
+            setIsLoading(false);
+        }
+    };
 
     return (
         <form
@@ -104,9 +129,10 @@ export default function ContactForm() {
 
             <button
                 type="submit"
-                className="rounded-md border px-4 py-2 font-medium"
+                disabled={isLoading}
+                className="rounded-md border px-4 py-2 font-medium disabled:opacity-50"
             >
-                Envoyer
+                {isLoading ? "Envoi en cours..." : "Envoyer"}
             </button>
         </form>
     );
