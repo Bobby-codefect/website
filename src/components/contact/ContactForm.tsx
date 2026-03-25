@@ -9,6 +9,7 @@ export default function ContactForm() {
         nom: "",
         email: "",
         message: "",
+        captchaToken: "",
     });
 
     const [messageSucces, setMessageSucces] = useState("");
@@ -67,6 +68,7 @@ export default function ContactForm() {
                 nom: "",
                 email: "",
                 message: "",
+                captchaToken: "",
             });
         } catch {
             setMessageErreur("Impossible de contacter le serveur.");
@@ -132,6 +134,27 @@ export default function ContactForm() {
             {messageSucces && (
                 <p className="text-sm font-medium text-green-600">{messageSucces}</p>
             )}
+
+            <div className="space-y-2">
+                <p className="text-sm font-medium">Vérification anti-spam</p>
+
+                <div className="rounded-md border border-dashed p-4 text-sm text-gray-600">
+                    Emplacement réservé au captcha
+                </div>
+
+                <button
+                    type="button"
+                    onClick={() =>
+                        setFormData((previousData) => ({
+                            ...previousData,
+                            captchaToken: "token-demo",
+                        }))
+                    }
+                    className="rounded-md border px-3 py-2 text-sm"
+                >
+                    Simuler la validation du captcha
+                </button>
+            </div>
 
             <button
                 type="submit"

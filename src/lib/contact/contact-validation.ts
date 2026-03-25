@@ -28,5 +28,9 @@ export function validateContactForm(data: ContactFormData) {
         return "Le message ne doit pas dépasser 1000 caractères.";
     }
 
+    if (!data.captchaToken.trim()) {
+        return "Veuillez valider le captcha.";
+    }
+
     return null;
 }
