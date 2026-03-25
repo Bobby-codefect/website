@@ -14,6 +14,10 @@ export default function ContactForm() {
     const [messageErreur, setMessageErreur] = useState("");
     const [isLoading, setIsLoading] = useState(false);
 
+    function isEmailValid(email: string) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
     function handleChange(
         event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) {
@@ -23,6 +27,9 @@ export default function ContactForm() {
             ...previousData,
             [name]: value,
         }));
+
+        setMessageErreur("");
+        setMessageSucces("");
     }
 
     const handleSubmit: React.SubmitEventHandler<HTMLFormElement> = async (
@@ -35,6 +42,11 @@ export default function ContactForm() {
 
         if (!formData.nom || !formData.email || !formData.message) {
             setMessageErreur("Tous les champs sont obligatoires.");
+            return;
+        }
+
+        if (!isEmailValid(formData.email)) {
+            setMessageErreur("Veuillez saisir une adresse email valide.");
             return;
         }
 
