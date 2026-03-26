@@ -3,6 +3,7 @@ import type { ContactFormData } from "@/types/contact";
 import { validateContactForm } from "@/lib/contact/contact-validation";
 
 export async function POST(request: Request) {
+
     try {
         const body: ContactFormData = await request.json();
 
