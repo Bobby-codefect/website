@@ -1,7 +1,7 @@
 import type { ContactFormData } from "@/types/contact";
 
-const MESSAGE_MIN_LENGTH = 10;
-const MESSAGE_MAX_LENGTH = 1000;
+export const MESSAGE_MIN_LENGTH = 10;
+export const MESSAGE_MAX_LENGTH = 1000;
 
 export function isEmailValid(email: string) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -11,6 +11,7 @@ export function validateContactForm(data: ContactFormData) {
     const nom = data.nom.trim();
     const email = data.email.trim();
     const message = data.message.trim();
+    const captchaToken = data.captchaToken.trim();
 
     if (!nom || !email || !message) {
         return "Tous les champs sont obligatoires.";
@@ -28,7 +29,7 @@ export function validateContactForm(data: ContactFormData) {
         return "Le message ne doit pas dépasser 1000 caractères.";
     }
 
-    if (!data.captchaToken.trim()) {
+    if (!captchaToken) {
         return "Veuillez valider le captcha.";
     }
 

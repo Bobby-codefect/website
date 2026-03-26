@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { ContactFormData } from "@/types/contact";
 import { validateContactForm } from "@/lib/contact/contact-validation";
+import TurnstileWidget from "@/components/contact/TurnstileWidget";
 
 export default function ContactForm() {
     const [formData, setFormData] = useState<ContactFormData>({
@@ -77,6 +78,10 @@ export default function ContactForm() {
         }
     };
 
+    const captchaValide = formData.captchaToken.trim() !== "";
+
+    const isSubmitDisabled = isLoading || !captchaValide;
+
     return (
         <form
             onSubmit={handleSubmit}
@@ -138,27 +143,25 @@ export default function ContactForm() {
             <div className="space-y-2">
                 <p className="text-sm font-medium">Vérification anti-spam</p>
 
-                <div className="rounded-md border border-dashed p-4 text-sm text-gray-600">
-                    Emplacement réservé au captcha
-                </div>
-
-                <button
-                    type="button"
-                    onClick={() =>
+                <TurnstileWidget
+                    onSuccess={(token) =>
                         setFormData((previousData) => ({
                             ...previousData,
-                            captchaToken: "token-demo",
+                            captchaToken: token,
                         }))
                     }
-                    className="rounded-md border px-3 py-2 text-sm"
-                >
-                    Simuler la validation du captcha
-                </button>
+                    onExpire={() =>
+                        setFormData((previousData) => ({
+                            ...previousData,
+                            captchaToken: "",
+                        }))
+                    }
+                />
             </div>
 
             <button
                 type="submit"
-                disabled={isLoading}
+                disabled={isSubmitDisabled}
                 className="rounded-md border px-4 py-2 font-medium disabled:opacity-50"
             >
                 {isLoading ? "Envoi en cours..." : "Envoyer"}

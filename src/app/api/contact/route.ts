@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import type { ContactFormData } from "@/types/contact";
 import { validateContactForm } from "@/lib/contact/contact-validation";
+import { verifyCaptcha } from "@/lib/contact/verify-captcha";
 
 export async function POST(request: Request) {
 
@@ -12,6 +13,15 @@ export async function POST(request: Request) {
         if (validationError) {
             return NextResponse.json(
                 { message: validationError },
+                { status: 400 }
+            );
+        }
+
+        const isCaptchaValid = await verifyCaptcha(body.captchaToken);
+
+        if (!isCaptchaValid) {
+            return NextResponse.json(
+                { message: "La vérification anti-spam a échoué." },
                 { status: 400 }
             );
         }
