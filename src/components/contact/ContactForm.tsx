@@ -1,22 +1,21 @@
 "use client";
 
 import { useState } from "react";
-
-type ContactFormData = {
-    nom: string;
-    email: string;
-    message: string;
-};
+import type { ContactFormData } from "@/types/contact";
+import { validateContactForm } from "@/lib/contact/contact-validation";
+import TurnstileWidget from "@/components/contact/TurnstileWidget";
 
 export default function ContactForm() {
     const [formData, setFormData] = useState<ContactFormData>({
         nom: "",
         email: "",
         message: "",
+        captchaToken: "",
     });
 
     const [messageSucces, setMessageSucces] = useState("");
     const [messageErreur, setMessageErreur] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
 
     function handleChange(
         event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -27,22 +26,61 @@ export default function ContactForm() {
             ...previousData,
             [name]: value,
         }));
+
+        setMessageErreur("");
+        setMessageSucces("");
     }
 
-    function handleSubmit(event: React.SubmitEvent) {
+    const handleSubmit: React.SubmitEventHandler<HTMLFormElement> = async (
+        event
+    ) => {
         event.preventDefault();
 
         setMessageSucces("");
         setMessageErreur("");
 
-        if (!formData.nom || !formData.email || !formData.message) {
-            setMessageErreur("Tous les champs sont obligatoires.");
+        const validationError = validateContactForm(formData);
+
+        if (validationError) {
+            setMessageErreur(validationError);
             return;
         }
 
-        setMessageSucces("Le formulaire est prêt à être envoyé.");
-        console.log("Données du formulaire :", formData);
-    }
+        try {
+            setIsLoading(true);
+
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                setMessageErreur(data.message || "Une erreur est survenue.");
+                return;
+            }
+
+            setMessageSucces(data.message || "Message envoyé avec succès.");
+            setFormData({
+                nom: "",
+                email: "",
+                message: "",
+                captchaToken: "",
+            });
+        } catch {
+            setMessageErreur("Impossible de contacter le serveur.");
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    const captchaValide = formData.captchaToken.trim() !== "";
+
+    const isSubmitDisabled = isLoading || !captchaValide;
 
     return (
         <form
@@ -102,11 +140,31 @@ export default function ContactForm() {
                 <p className="text-sm font-medium text-green-600">{messageSucces}</p>
             )}
 
+            <div className="space-y-2">
+                <p className="text-sm font-medium">Vérification anti-spam</p>
+
+                <TurnstileWidget
+                    onSuccess={(token) =>
+                        setFormData((previousData) => ({
+                            ...previousData,
+                            captchaToken: token,
+                        }))
+                    }
+                    onExpire={() =>
+                        setFormData((previousData) => ({
+                            ...previousData,
+                            captchaToken: "",
+                        }))
+                    }
+                />
+            </div>
+
             <button
                 type="submit"
-                className="rounded-md border px-4 py-2 font-medium"
+                disabled={isSubmitDisabled}
+                className="rounded-md border px-4 py-2 font-medium disabled:opacity-50"
             >
-                Envoyer
+                {isLoading ? "Envoi en cours..." : "Envoyer"}
             </button>
         </form>
     );
