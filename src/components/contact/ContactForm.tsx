@@ -85,6 +85,7 @@ export default function ContactForm() {
     return (
         <form
             onSubmit={handleSubmit}
+            noValidate
             className="space-y-6 rounded-lg border p-6 shadow-sm"
         >
             <div>
