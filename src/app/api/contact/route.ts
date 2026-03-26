@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import type { ContactFormData } from "@/types/contact";
 import { validateContactForm } from "@/lib/contact/contact-validation";
 import { verifyCaptcha } from "@/lib/contact/verify-captcha";
+import { sendContactEmail } from "@/lib/contact/send-email";
 
 export async function POST(request: Request) {
 
@@ -26,13 +27,19 @@ export async function POST(request: Request) {
             );
         }
 
+        await sendContactEmail({
+            nom: body.nom.trim(),
+            email: body.email.trim(),
+            message: body.message.trim(),
+        });
+
         return NextResponse.json(
-            { message: "Demande reçue avec succès." },
+            { message: "Votre message a bien été envoyé." },
             { status: 200 }
         );
     } catch {
         return NextResponse.json(
-            { message: "Erreur lors du traitement de la demande." },
+            { message: "Erreur lors de l’envoi du message." },
             { status: 500 }
         );
     }

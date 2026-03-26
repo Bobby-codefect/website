@@ -1,4 +1,4 @@
-export type Prestations = {
+export type Prestation = {
     id: number;
     titre: string;
     description: string;
