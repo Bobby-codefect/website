@@ -1,48 +1,135 @@
-export type Prestation = {
-    id: number;
+export type BlocPrestation = {
     titre: string;
-    description: string;
+    points: string[];
 };
 
-export const prestations: Prestation[] = [
+export type CategoriePrestation = {
+    id: number;
+    titre: string;
+    blocs: BlocPrestation[];
+};
+
+export const prestations: CategoriePrestation[] = [
     {
         id: 1,
-        titre: "Développement web sur mesure",
-        description: "Création de sites et d’applications web adaptés aux besoins métiers des clients."
+        titre: "Infrastructure",
+        blocs: [
+            {
+                titre: "Solutions infrastructure",
+                points: [],
+            },
+            {
+                titre: "Solutions supports",
+                points: [
+                    "Gestion des identités",
+                    "Gestion des mails",
+                    "Gestion des documents",
+                    "Solutions VoIP",
+                ],
+            },
+            {
+                titre: "Solutions management",
+                points: [
+                    "Gestion des tâches",
+                    "Modélisation des processus métiers",
+                ],
+            },
+            {
+                titre: "Infogérance",
+                points: [
+                    "Monitoring 24/7 des systèmes",
+                    "Ticketing",
+                    "Accès à une base de connaissance",
+                ],
+            },
+            {
+                titre: "Outils",
+                points: [
+                    "Étude de processus",
+                    "Étude des besoins",
+                    "Sélection de méthodes pour répondre aux besoins",
+                    "Sélection de l’outil en fonction de la méthode",
+                ],
+            },
+        ],
     },
     {
         id: 2,
-        titre: "Maintenance applicative",
-        description: "Correction, amélioration et suivi technique des applications existantes."
+        titre: "Cybersécurité",
+        blocs: [
+            {
+                titre: "Cybersécurité by design",
+                points: [
+                    "Sécurisation de l’infrastructure par matériels",
+                    "Sécurisation des postes de travail",
+                    "Sécurisation des données",
+                    "Sécurisation des accès",
+                ],
+            },
+            {
+                titre: "Gestion de crise",
+                points: [
+                    "Processus de gestion de crise",
+                ],
+            },
+            {
+                titre: "Documentation",
+                points: [
+                    "Documentation PSSI",
+                    "Documentation incident",
+                    "PRA / PCA",
+                ],
+            },
+        ],
     },
     {
         id: 3,
-        titre: "Audit technique",
-        description: "Analyse de l’existant pour identifier les points d’amélioration techniques et fonctionnels."
+        titre: "Conseil et Audit",
+        blocs: [
+            {
+                titre: "Audits",
+                points: [
+                    "Audit de maturité de l’infrastructure",
+                    "Audit de maturité cybersécurité",
+                    "Audit de processus de gestion de projet",
+                ],
+            },
+            {
+                titre: "Conseil",
+                points: [
+                    "Conseil en optimisation",
+                    "Optimisation des processus",
+                ],
+            },
+        ],
     },
     {
         id: 4,
-        titre: "Accompagnement projet",
-        description: "Aide au cadrage, au suivi et à la mise en place de solutions numériques adaptées."
+        titre: "Sur-Mesure",
+        blocs: [
+            {
+                titre: "Développement d’outils ciblés",
+                points: [
+                    "Développement d’outils sur mesure pour des besoins ciblés",
+                    "Fonctionnalités non présentes dans des outils existants",
+                    "Génération de rapports sur mesure",
+                    "Automatisation de tâches récurrentes",
+                ],
+            },
+        ],
     },
     {
         id: 5,
-        titre: "Développement d’applications métier",
-        description: "Conception d’outils sur mesure pour répondre aux besoins spécifiques des entreprises."
+        titre: "Transparence",
+        blocs: [
+            {
+                titre: "Suivi et visibilité",
+                points: [
+                    "Vue sur le monitoring de l’infrastructure et des réseaux",
+                    "Vue sur la gestion des tickets",
+                    "Vue sur l’avancement des tâches en cours",
+                ],
+            },
+        ],
     },
-    {
-        id: 6,
-        titre: "Refonte de site web",
-        description: "Modernisation d’interfaces existantes pour améliorer l’image, l’ergonomie et les performances."
-    },
-    {
-        id: 7,
-        titre: "Intégration front-end",
-        description: "Transformation de maquettes en interfaces web modernes, responsives et accessibles."
-    },
-    {
-        id: 8,
-        titre: "Développement back-end",
-        description: "Mise en place de traitements, d’API et de logiques métiers côté serveur."
-    }
 ];

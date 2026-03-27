@@ -2,14 +2,28 @@ import ContactForm from "@/components/contact/ContactForm";
 
 export default function ContactSection() {
     return (
-        <section className="mx-auto max-w-3xl px-4 py-10">
-            <h1 className="mb-4 text-3xl font-bold">Contact</h1>
-            <p className="mb-8 text-gray-600">
-                Vous avez un besoin, une question ou un projet ? Contactez Codefect via
-                le formulaire ci-dessous.
-            </p>
+        <section className="min-h-screen bg-[#17202a] text-white">
+            <div className="mx-auto max-w-7xl px-6 py-16">
+                <header className="mb-14 max-w-4xl">
+                    <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[#e29e21]">
+                        Contact
+                    </p>
 
-            <ContactForm />
+                    <h1 className="mb-6 text-4xl font-bold leading-tight md:text-5xl">
+                        Échangeons autour de vos besoins numériques.
+                    </h1>
+
+                    <p className="text-lg leading-8 text-[#b8c2cf]">
+                        Vous avez un besoin, une question ou un projet ? Contactez Codefect
+                        pour échanger sur votre contexte, vos contraintes et les solutions
+                        les plus adaptées à votre activité.
+                    </p>
+                </header>
+
+                <div className="max-w-4xl">
+                    <ContactForm />
+                </div>
+            </div>
         </section>
     );
 }
