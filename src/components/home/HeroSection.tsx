@@ -8,7 +8,7 @@ export default function HeroSection() {
     return (
         <>
             <section className="bg-[#17202a] text-white">
-                <div className="mx-auto flex min-h-[75vh] max-w-7xl items-center px-6 py-20">
+                <div className="mx-auto flex min-h-[58vh] max-w-7xl items-center px-6 py-12">
                     <div className="max-w-3xl animate-[heroFadeUp_0.9s_ease-out_both]">
                         <p className="mb-4 inline-flex rounded-full border border-[#1e6585] bg-[#1b364f] px-4 py-2 text-sm font-medium text-[#d7f3ff]">
                             {badge}
@@ -41,7 +41,10 @@ export default function HeroSection() {
                 </div>
             </section>
 
-            <HeroWave />
+            <div className="-mt-8 md:-mt-12">
+                <HeroWave />
+            </div>
+
         </>
     );
 }
