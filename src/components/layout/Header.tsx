@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 const liensNavigation = [
@@ -16,13 +15,10 @@ export default function Header() {
                     className="flex items-center"
                     aria-label="Retour à l'accueil"
                 >
-                    <Image
+                    <img
                         src="/logo-codefect-header.png"
                         alt="Logo Codefect"
-                        width={260}
-                        height={64}
-                        priority
-                        className="w-[210px] h-auto md:w-[260px]"
+                        className="h-auto w-[210px] md:w-[260px]"
                     />
                 </Link>
 
