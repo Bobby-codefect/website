@@ -6,11 +6,11 @@ export default function FinalCtaSection() {
         homeContent.ctaFinal;
 
     return (
-        <section className="bg-[#17202a] text-white">
-            <div className="mx-auto max-w-7xl px-6 py-20">
-                <div className="rounded-3xl border border-[#1e6585] bg-[#1b364f] p-8 md:p-12">
+        <section className="bg-[#f4f6f8] text-[#17202a]">
+            <div className="mx-auto max-w-7xl px-6 pb-20">
+                <div className="rounded-3xl border border-[#b8c2cf] bg-white p-8 shadow-sm md:p-12">
                     <div className="max-w-3xl">
-                        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[#e29e21]">
+                        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[#1e6585]">
                             Passons à l’action
                         </p>
 
@@ -18,7 +18,9 @@ export default function FinalCtaSection() {
                             {titre}
                         </h2>
 
-                        <p className="mb-8 text-lg leading-8 text-[#b8c2cf]">{texte}</p>
+                        <div className="mb-8 h-1.5 w-24 rounded-full bg-[#e29e21]" />
+
+                        <p className="mb-8 text-lg leading-8 text-[#1b364f]">{texte}</p>
 
                         <div className="flex flex-col gap-4 sm:flex-row">
                             <Link
@@ -30,7 +32,7 @@ export default function FinalCtaSection() {
 
                             <Link
                                 href="/prestations"
-                                className="rounded-md border border-[#b8c2cf] px-6 py-3 text-center font-semibold text-white transition hover:bg-[#17202a]"
+                                className="rounded-md border border-[#1b364f] px-6 py-3 text-center font-semibold text-[#17202a] transition hover:bg-[#f4f6f8]"
                             >
                                 {boutonSecondaire}
                             </Link>
