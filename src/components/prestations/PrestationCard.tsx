@@ -6,19 +6,19 @@ type PrestationCardProps = {
 
 export default function PrestationCard({ categorie }: PrestationCardProps) {
     return (
-        <article className="rounded-3xl border border-[#b8c2cf] bg-white p-8 shadow-sm">
+        <article className="rounded-3xl border border-[var(--color-border-soft)] bg-[var(--color-white)] p-8 shadow-sm">
             <div className="mb-6">
-                <h2 className="text-2xl font-bold text-[#17202a]">
+                <h2 className="text-2xl font-bold text-[var(--color-text-dark)]">
                     {categorie.titre}
                 </h2>
 
-                <div className="mt-4 h-1.5 w-20 rounded-full bg-[#e29e21]" />
+                <div className="mt-4 h-1.5 w-20 rounded-full bg-[var(--color-accent-gold-strong]" />
             </div>
 
             <div className="space-y-10">
                 {categorie.blocs.map((bloc) => (
                     <div key={bloc.titre}>
-                        <h3 className="mb-4 text-lg font-semibold text-[#1b364f]">
+                        <h3 className="mb-4 text-lg font-semibold text-[var(--color-text-soft)]">
                             {bloc.titre}
                         </h3>
 
@@ -26,8 +26,8 @@ export default function PrestationCard({ categorie }: PrestationCardProps) {
                             <ul className="space-y-3">
                                 {bloc.points.map((point) => (
                                     <li key={point} className="flex items-start gap-3">
-                                        <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-[#e29e21]" />
-                                        <span className="leading-7 text-[#1b364f]">{point}</span>
+                                        <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-[var(--color-accent-gold-strong)]" />
+                                        <span className="leading-7 text-[var(--color-text-soft)]">{point}</span>
                                     </li>
                                 ))}
                             </ul>

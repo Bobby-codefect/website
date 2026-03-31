@@ -3,10 +3,10 @@ import { prestations } from "@/data/prestations";
 
 export default function PrestationsSection() {
     return (
-        <section className="bg-[#f4f6f8] text-[#17202a]">
+        <section className="bg-[var(--color-bg-light)] text-[var(--color-text-dark)]">
             <div className="mx-auto max-w-7xl px-6 py-20">
                 <div className="mb-14 max-w-4xl">
-                    <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[#1e6585]">
+                    <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-accent-blue)]">
                         Prestations
                     </p>
 
@@ -14,9 +14,9 @@ export default function PrestationsSection() {
                         Des services structurés pour répondre à vos besoins numériques.
                     </h1>
 
-                    <div className="mb-8 h-1.5 w-24 rounded-full bg-[#e29e21]" />
+                    <div className="mb-8 h-1.5 w-24 rounded-full bg-[var(--color-accent-gold-strong)]" />
 
-                    <p className="text-lg leading-8 text-[#1b364f]">
+                    <p className="text-lg leading-8 text-[var(--color-text-soft)]">
                         Codefect accompagne les TPE et PME avec des prestations organisées
                         autour de l’infrastructure, de la cybersécurité, du conseil, du
                         sur-mesure et de la transparence de suivi.
@@ -29,8 +29,8 @@ export default function PrestationsSection() {
                     ))}
                 </div>
 
-                <div className="mt-20 rounded-3xl border border-[#b8c2cf] bg-white p-8 shadow-sm md:p-10">
-                    <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[#1e6585]">
+                <div className="mt-20 rounded-3xl border border-[var(--color-border-soft)] bg-[var(--color-white)] p-8 shadow-sm md:p-10">
+                    <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-accent-blue)]">
                         Besoin spécifique
                     </p>
 
@@ -38,9 +38,9 @@ export default function PrestationsSection() {
                         Vous avez un besoin particulier lié à votre activité ?
                     </h2>
 
-                    <div className="mb-8 h-1.5 w-24 rounded-full bg-[#e29e21]" />
+                    <div className="mb-8 h-1.5 w-24 rounded-full bg-[var(--color-accent-gold-strong)]" />
 
-                    <p className="mb-8 max-w-3xl text-lg leading-8 text-[#1b364f]">
+                    <p className="mb-8 max-w-3xl text-lg leading-8 text-[var(--color-text-soft)]">
                         Chaque entreprise a son contexte, ses priorités et ses contraintes.
                         Codefect vous accompagne avec une approche adaptée à votre
                         environnement et à vos objectifs.
@@ -48,7 +48,8 @@ export default function PrestationsSection() {
 
                     <a
                         href="/contact"
-                        className="inline-block rounded-md bg-[#be8620] px-6 py-3 font-semibold text-[#17202a] transition hover:bg-[#e29e21]"
+                        className="inline-block rounded-md bg-[var(--color-accent-gold)] px-6 py-3 font-semibold
+                        text-[var(--color-bg-dark)] transition hover:bg-[var(--color-accent-gold-strong)]"
                     >
                         Nous contacter
                     </a>

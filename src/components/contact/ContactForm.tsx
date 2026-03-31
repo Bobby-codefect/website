@@ -90,13 +90,13 @@ export default function ContactForm() {
         <form
             onSubmit={handleSubmit}
             noValidate
-            className="rounded-3xl border border-[#b8c2cf] bg-white p-8 shadow-sm md:p-10"
+            className="rounded-3xl border border-[var(--color-border-soft)] bg-[var(--color-white)] p-8 shadow-sm md:p-10"
         >
             <div className="grid gap-6 md:grid-cols-2">
                 <div>
                     <label
                         htmlFor="nom"
-                        className="mb-2 block text-sm font-medium text-[#1b364f]"
+                        className="mb-2 block text-sm font-medium text-[var(--color-text-soft)]"
                     >
                         Nom
                     </label>
@@ -106,7 +106,8 @@ export default function ContactForm() {
                         type="text"
                         value={formData.nom}
                         onChange={handleChange}
-                        className="w-full rounded-xl border border-[#b8c2cf] bg-white px-4 py-3 text-[#17202a] outline-none transition placeholder:text-[#7e8b99] focus:border-[#1e6585]"
+                        className="w-full rounded-xl border border-[var(--color-border-soft)] bg-[var(--color-white)] px-4 py-3
+                        text-[var(--color-text-dark)] outline-none transition placeholder:text-[#7e8b99] focus:border-[var(--color-accent-blue)]"
                         placeholder="Votre nom"
                     />
                 </div>
@@ -114,7 +115,7 @@ export default function ContactForm() {
                 <div>
                     <label
                         htmlFor="email"
-                        className="mb-2 block text-sm font-medium text-[#1b364f]"
+                        className="mb-2 block text-sm font-medium text-[var(--color-text-soft)]"
                     >
                         Email
                     </label>
@@ -124,7 +125,8 @@ export default function ContactForm() {
                         type="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full rounded-xl border border-[#b8c2cf] bg-white px-4 py-3 text-[#17202a] outline-none transition placeholder:text-[#7e8b99] focus:border-[#1e6585]"
+                        className="w-full rounded-xl border border-[var(--color-border-soft)] bg-[var(--color-white)] px-4 py-3
+                        text-[var(--color-text-dark)] outline-none transition placeholder:text-[#7e8b99] focus:border-[var(--color-accent-blue)]"
                         placeholder="votre@email.com"
                     />
                 </div>
@@ -133,7 +135,7 @@ export default function ContactForm() {
             <div className="mt-6">
                 <label
                     htmlFor="message"
-                    className="mb-2 block text-sm font-medium text-[#1b364f]"
+                    className="mb-2 block text-sm font-medium text-[var(--color-text-soft)]"
                 >
                     Message
                 </label>
@@ -143,7 +145,8 @@ export default function ContactForm() {
                     rows={6}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full rounded-xl border border-[#b8c2cf] bg-white px-4 py-3 text-[#17202a] outline-none transition placeholder:text-[#7e8b99] focus:border-[#1e6585]"
+                    className="w-full rounded-xl border border-[var(--color-border-soft)] bg-[var(--color-white)] px-4 py-3
+                    text-[var(--color-text-dark)] outline-none transition placeholder:text-[#7e8b99] focus:border-[var(--color-accent-blue)]"
                     placeholder="Décrivez votre besoin"
                 />
             </div>
@@ -160,8 +163,8 @@ export default function ContactForm() {
                 </p>
             )}
 
-            <div className="mt-8 rounded-2xl border border-[#b8c2cf] bg-[#f4f6f8] p-6">
-                <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[#1e6585]">
+            <div className="mt-8 rounded-2xl border border-[var(--color-border-soft)] bg-[var(--color-white)] p-6">
+                <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-accent-blue)]">
                     Vérification anti-spam
                 </p>
 
@@ -181,7 +184,7 @@ export default function ContactForm() {
                 />
 
                 {!captchaValide && (
-                    <p className="mt-4 text-sm text-[#1b364f]">
+                    <p className="mt-4 text-sm text-[var(--color-text-soft)]">
                         Veuillez valider la vérification anti-spam avant l’envoi.
                     </p>
                 )}
@@ -191,7 +194,8 @@ export default function ContactForm() {
                 <button
                     type="submit"
                     disabled={isSubmitDisabled}
-                    className="inline-block rounded-md bg-[#be8620] px-6 py-3 font-semibold text-[#17202a] transition hover:bg-[#e29e21] disabled:cursor-not-allowed disabled:opacity-50"
+                    className="inline-block rounded-md bg-[var(--color-accent-gold)] px-6 py-3 font-semibold text-[var(--color-bg-dark)]
+                    transition hover:bg-[var(--color-accent-gold-strong)] disabled:cursor-not-allowed disabled:opacity-50"
                 >
                     {isLoading ? "Envoi en cours..." : "Envoyer"}
                 </button>
