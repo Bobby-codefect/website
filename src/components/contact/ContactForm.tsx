@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import type { ContactFormData } from "@/types/contact";
 import { validateContactForm } from "@/lib/contact/contact-validation";
-import dynamic from "next/dynamic";
 
 const TurnstileWidget = dynamic(
     () => import("@/components/contact/TurnstileWidget"),
@@ -90,13 +90,13 @@ export default function ContactForm() {
         <form
             onSubmit={handleSubmit}
             noValidate
-            className="space-y-8 rounded-2xl border border-[#1e6585] bg-[#1b364f] p-8 shadow-sm"
+            className="rounded-3xl border border-[#b8c2cf] bg-white p-8 shadow-sm md:p-10"
         >
             <div className="grid gap-6 md:grid-cols-2">
-                <div className="md:col-span-1">
+                <div>
                     <label
                         htmlFor="nom"
-                        className="mb-2 block text-sm font-medium text-[#d7f3ff]"
+                        className="mb-2 block text-sm font-medium text-[#1b364f]"
                     >
                         Nom
                     </label>
@@ -106,15 +106,15 @@ export default function ContactForm() {
                         type="text"
                         value={formData.nom}
                         onChange={handleChange}
-                        className="w-full rounded-xl border border-[#1e6585] bg-[#17202a] px-4 py-3 text-white outline-none transition placeholder:text-[#7e8b99] focus:border-[#e29e21]"
+                        className="w-full rounded-xl border border-[#b8c2cf] bg-white px-4 py-3 text-[#17202a] outline-none transition placeholder:text-[#7e8b99] focus:border-[#1e6585]"
                         placeholder="Votre nom"
                     />
                 </div>
 
-                <div className="md:col-span-1">
+                <div>
                     <label
                         htmlFor="email"
-                        className="mb-2 block text-sm font-medium text-[#d7f3ff]"
+                        className="mb-2 block text-sm font-medium text-[#1b364f]"
                     >
                         Email
                     </label>
@@ -124,16 +124,16 @@ export default function ContactForm() {
                         type="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full rounded-xl border border-[#1e6585] bg-[#17202a] px-4 py-3 text-white outline-none transition placeholder:text-[#7e8b99] focus:border-[#e29e21]"
+                        className="w-full rounded-xl border border-[#b8c2cf] bg-white px-4 py-3 text-[#17202a] outline-none transition placeholder:text-[#7e8b99] focus:border-[#1e6585]"
                         placeholder="votre@email.com"
                     />
                 </div>
             </div>
 
-            <div>
+            <div className="mt-6">
                 <label
                     htmlFor="message"
-                    className="mb-2 block text-sm font-medium text-[#d7f3ff]"
+                    className="mb-2 block text-sm font-medium text-[#1b364f]"
                 >
                     Message
                 </label>
@@ -143,57 +143,55 @@ export default function ContactForm() {
                     rows={6}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full rounded-xl border border-[#1e6585] bg-[#17202a] px-4 py-3 text-white outline-none transition placeholder:text-[#7e8b99] focus:border-[#e29e21]"
+                    className="w-full rounded-xl border border-[#b8c2cf] bg-white px-4 py-3 text-[#17202a] outline-none transition placeholder:text-[#7e8b99] focus:border-[#1e6585]"
                     placeholder="Décrivez votre besoin"
                 />
             </div>
 
             {messageErreur && (
-                <p className="rounded-xl border border-red-400/40 bg-red-500/10 px-4 py-3 text-sm font-medium text-red-200">
+                <p className="mt-6 rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
                     {messageErreur}
                 </p>
             )}
 
             {messageSucces && (
-                <p className="rounded-xl border border-green-400/40 bg-green-500/10 px-4 py-3 text-sm font-medium text-green-200">
+                <p className="mt-6 rounded-xl border border-green-300 bg-green-50 px-4 py-3 text-sm font-medium text-green-700">
                     {messageSucces}
                 </p>
             )}
 
-            <div className="space-y-3">
-                <p className="text-sm font-medium text-[#d7f3ff]">
+            <div className="mt-8 rounded-2xl border border-[#b8c2cf] bg-[#f4f6f8] p-6">
+                <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[#1e6585]">
                     Vérification anti-spam
                 </p>
 
-                <div className="rounded-xl border border-[#1e6585] bg-[#17202a] p-4">
-                    <TurnstileWidget
-                        onSuccess={(token) =>
-                            setFormData((previousData) => ({
-                                ...previousData,
-                                captchaToken: token,
-                            }))
-                        }
-                        onExpire={() =>
-                            setFormData((previousData) => ({
-                                ...previousData,
-                                captchaToken: "",
-                            }))
-                        }
-                    />
-                </div>
+                <TurnstileWidget
+                    onSuccess={(token) =>
+                        setFormData((previousData) => ({
+                            ...previousData,
+                            captchaToken: token,
+                        }))
+                    }
+                    onExpire={() =>
+                        setFormData((previousData) => ({
+                            ...previousData,
+                            captchaToken: "",
+                        }))
+                    }
+                />
 
                 {!captchaValide && (
-                    <p className="text-sm text-[#b8c2cf]">
+                    <p className="mt-4 text-sm text-[#1b364f]">
                         Veuillez valider la vérification anti-spam avant l’envoi.
                     </p>
                 )}
             </div>
 
-            <div>
+            <div className="mt-8">
                 <button
                     type="submit"
                     disabled={isSubmitDisabled}
-                    className="inline-flex rounded-md bg-[#be8620] px-6 py-3 font-semibold text-[#17202a] transition hover:bg-[#e29e21] disabled:cursor-not-allowed disabled:opacity-50"
+                    className="inline-block rounded-md bg-[#be8620] px-6 py-3 font-semibold text-[#17202a] transition hover:bg-[#e29e21] disabled:cursor-not-allowed disabled:opacity-50"
                 >
                     {isLoading ? "Envoi en cours..." : "Envoyer"}
                 </button>

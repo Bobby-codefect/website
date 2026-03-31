@@ -2,10 +2,10 @@ import ContactForm from "@/components/contact/ContactForm";
 
 export default function ContactSection() {
     return (
-        <section className="min-h-screen bg-[#17202a] text-white">
-            <div className="mx-auto max-w-7xl px-6 py-16">
-                <header className="mb-14 max-w-4xl">
-                    <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[#e29e21]">
+        <section className="bg-[#f4f6f8] text-[#17202a]">
+            <div className="mx-auto max-w-7xl px-6 py-20">
+                <div className="mb-14 max-w-4xl">
+                    <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[#1e6585]">
                         Contact
                     </p>
 
@@ -13,14 +13,16 @@ export default function ContactSection() {
                         Échangeons autour de vos besoins numériques.
                     </h1>
 
-                    <p className="text-lg leading-8 text-[#b8c2cf]">
+                    <div className="mb-8 h-1.5 w-24 rounded-full bg-[#e29e21]" />
+
+                    <p className="text-lg leading-8 text-[#1b364f]">
                         Vous avez un besoin, une question ou un projet ? Contactez Codefect
                         pour échanger sur votre contexte, vos contraintes et les solutions
                         les plus adaptées à votre activité.
                     </p>
-                </header>
+                </div>
 
-                <div className="max-w-4xl">
+                <div className="max-w-5xl">
                     <ContactForm />
                 </div>
             </div>

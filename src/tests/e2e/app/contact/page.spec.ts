@@ -7,14 +7,15 @@ test.describe("Page Contact", () => {
 
         // On vérifie que le titre principal est visible.
         await expect(
-            page.getByRole("heading", { name: "Contact" })
+            page.getByRole("heading", {
+                level: 1,
+                name: /Échangeons autour de vos besoins numériques/i,
+            })
         ).toBeVisible();
 
-        // On vérifie que le texte d'introduction est bien affiché.
+        // On vérifie qu'un extrait du texte d'introduction est bien affiché.
         await expect(
-            page.getByText(
-                "Vous avez un besoin, une question ou un projet ? Contactez Codefect via le formulaire ci-dessous."
-            )
+            page.getByText(/Vous avez un besoin, une question ou un projet/i)
         ).toBeVisible();
 
         // On vérifie que les champs principaux du formulaire sont présents.
@@ -24,12 +25,12 @@ test.describe("Page Contact", () => {
 
         // On vérifie que la zone de vérification anti-spam est visible.
         await expect(
-            page.getByText("Vérification anti-spam")
+            page.getByText("Vérification anti-spam", { exact: true })
         ).toBeVisible();
 
         // On vérifie que le bouton Envoyer est affiché.
         await expect(
-            page.getByRole("button", { name: "Envoyer" })
+            page.getByRole("button", { name: /Envoyer/i })
         ).toBeVisible();
     });
 

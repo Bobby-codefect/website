@@ -1,7 +1,7 @@
 "use client";
 
 import Script from "next/script";
-import { useId } from "react";
+import { useCallback, useEffect, useId } from "react";
 
 type TurnstileWidgetProps = {
     onSuccess: (token: string) => void;
@@ -30,7 +30,7 @@ export default function TurnstileWidget({
                                         }: TurnstileWidgetProps) {
     const widgetId = useId().replace(/:/g, "");
 
-    function renderWidget() {
+    const renderWidget = useCallback(() => {
         if (!window.turnstile) {
             return;
         }
@@ -53,14 +53,18 @@ export default function TurnstileWidget({
                 onExpire();
             },
         });
-    }
+    }, [widgetId, onSuccess, onExpire]);
+
+    useEffect(() => {
+        renderWidget();
+    }, [renderWidget]);
 
     return (
         <>
             <Script
                 src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
                 strategy="afterInteractive"
-                onLoad={renderWidget}
+                onReady={renderWidget}
             />
 
             <div id={widgetId} />
