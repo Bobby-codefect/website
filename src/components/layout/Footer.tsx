@@ -13,7 +13,7 @@ export default function Footer() {
             <FooterWave />
 
             <footer className="bg-[#17202a] text-white">
-                <div className="mx-auto max-w-7xl px-6 py-10">
+                <div className="mx-auto max-w-7xl px-6 py-8">
                     <div className="grid gap-10 md:grid-cols-[1.2fr_0.8fr]">
                         <div>
                             <h2 className="mb-4 text-2xl font-bold">Codefect</h2>

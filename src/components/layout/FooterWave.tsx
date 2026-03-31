@@ -2,7 +2,7 @@ export default function FooterWave() {
     return (
         <div className="relative overflow-hidden bg-[#17202a]">
             <svg
-                viewBox="0 0 1440 140"
+                viewBox="0 0 1440 95"
                 xmlns="http://www.w3.org/2000/svg"
                 className="block h-auto w-full"
                 preserveAspectRatio="none"
@@ -12,8 +12,8 @@ export default function FooterWave() {
                 <path
                     d="
             M0,0
-            C220,18 460,14 720,34
-            C980,54 1190,96 1440,84
+            C220,10 460,10 720,22
+            C980,34 1190,58 1440,50
             L1440,0
             Z
           "
@@ -23,12 +23,12 @@ export default function FooterWave() {
                 {/* Bande bleu sombre */}
                 <path
                     d="
-            M0,26
-            C220,40 460,38 720,54
-            C980,72 1190,106 1440,98
-            L1440,122
-            C1190,126 980,100 720,82
-            C460,64 220,58 0,48
+            M0,18
+            C220,28 460,30 720,40
+            C980,52 1190,74 1440,68
+            L1440,82
+            C1190,84 980,68 720,58
+            C460,48 220,42 0,36
             Z
           "
                     fill="#1b364f"
@@ -37,12 +37,12 @@ export default function FooterWave() {
                 {/* Bande bleu accent */}
                 <path
                     d="
-            M0,46
-            C220,58 460,60 720,76
-            C980,92 1190,122 1440,118
-            L1440,138
-            C1190,140 980,120 720,102
-            C460,86 220,78 0,68
+            M0,34
+            C220,42 460,48 720,58
+            C980,68 1190,84 1440,82
+            L1440,92
+            C1190,92 980,82 720,72
+            C460,62 220,56 0,50
             Z
           "
                     fill="#1e6585"
@@ -51,9 +51,9 @@ export default function FooterWave() {
                 {/* Liseré doré */}
                 <path
                     d="
-            M0,68
-            C220,78 460,86 720,102
-            C980,120 1190,140 1440,138
+            M0,50
+            C220,56 460,62 720,72
+            C980,82 1190,92 1440,92
           "
                     fill="none"
                     stroke="#e29e21"
