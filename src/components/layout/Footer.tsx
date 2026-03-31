@@ -12,13 +12,13 @@ export default function Footer() {
         <>
             <FooterWave />
 
-            <footer className="bg-[#17202a] text-white">
+            <footer className="bg-[var(--color-bg-dark)] text-white">
                 <div className="mx-auto max-w-7xl px-6 py-8">
                     <div className="grid gap-10 md:grid-cols-[1.2fr_0.8fr]">
                         <div>
                             <h2 className="mb-4 text-2xl font-bold">Codefect</h2>
 
-                            <p className="max-w-2xl leading-7 text-[#b8c2cf]">
+                            <p className="max-w-2xl leading-7 text-[var(--color-border-soft)]">
                                 Codefect accompagne les TPE et PME dans l’optimisation, la
                                 sécurisation et l’évolution de leurs outils numériques avec une
                                 approche adaptée à leurs besoins réels.
@@ -26,7 +26,7 @@ export default function Footer() {
                         </div>
 
                         <div>
-                            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[#e29e21]">
+                            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-accent-gold-strong)]">
                                 Navigation
                             </p>
 
@@ -35,7 +35,7 @@ export default function Footer() {
                                     <li key={lien.href}>
                                         <Link
                                             href={lien.href}
-                                            className="text-[#b8c2cf] transition hover:text-white"
+                                            className="text-[var(--color-border-soft)] transition hover:text-white"
                                         >
                                             {lien.label}
                                         </Link>
@@ -45,8 +45,8 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    <div className="mt-10 border-t border-[#1e6585] pt-6">
-                        <p className="text-sm text-[#b8c2cf]">
+                    <div className="mt-10 border-t border-[var(--color-accent-blue)] pt-6">
+                        <p className="text-sm text-[var(--color-border-soft)]">
                             © 2026 Codefect. Tous droits réservés.
                         </p>
                     </div>

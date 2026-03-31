@@ -1,14 +1,13 @@
-// src/components/home/GoalsSection.tsx
 import { homeContent } from "@/data/site-content";
 
 export default function GoalsSection() {
     const { titre, texte, items } = homeContent.objectifs;
 
     return (
-        <section className="bg-[#f4f6f8] text-[#17202a]">
+        <section className="bg-[var(--color-bg-light)] text-[var(--color-text-dark)]">
             <div className="mx-auto max-w-7xl px-6 pb-20">
                 <div className="mb-12 max-w-4xl">
-                    <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[#1e6585]">
+                    <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-accent-blue)]">
                         Objectifs
                     </p>
 
@@ -16,26 +15,27 @@ export default function GoalsSection() {
                         {titre}
                     </h2>
 
-                    <div className="mb-8 h-1.5 w-24 rounded-full bg-[#e29e21]" />
+                    <div className="mb-8 h-1.5 w-24 rounded-full bg-[var(--color-accent-gold-strong)]" />
 
-                    <p className="text-lg leading-8 text-[#1b364f]">{texte}</p>
+                    <p className="text-lg leading-8 text-[var(--color-text-soft)]">{texte}</p>
                 </div>
 
                 <div className="grid gap-6 md:grid-cols-2">
                     {items.map((item, index) => (
                         <article
                             key={item}
-                            className="rounded-3xl border border-[#b8c2cf] bg-white p-6 shadow-sm"
+                            className="rounded-3xl border border-[var(--color-border-soft)] bg-white p-6 shadow-sm"
                         >
                             <div className="mb-5 flex items-center gap-4">
-                                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[#1e6585] bg-[#17202a] text-sm font-bold text-[#e29e21]">
+                                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--color-accent-blue)]
+                                bg-[var(--color-bg-dark)] text-sm font-bold text-[var(--color-accent-gold-strong)]">
                                     {index + 1}
                                 </div>
 
-                                <div className="h-px flex-1 bg-[#b8c2cf]" />
+                                <div className="h-px flex-1 bg-[var(--color-border-soft)]" />
                             </div>
 
-                            <p className="leading-7 text-[#1b364f]">{item}</p>
+                            <p className="leading-7 text-[var(--color-text-soft)]">{item}</p>
                         </article>
                     ))}
                 </div>

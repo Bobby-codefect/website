@@ -6,11 +6,11 @@ export default function FinalCtaSection() {
         homeContent.ctaFinal;
 
     return (
-        <section className="bg-[#f4f6f8] text-[#17202a]">
+        <section className="bg-[var(--color-bg-light)] text-[var(--color-text-dark)]">
             <div className="mx-auto max-w-7xl px-6 pb-20">
-                <div className="rounded-3xl border border-[#b8c2cf] bg-white p-8 shadow-sm md:p-12">
+                <div className="rounded-3xl border border-[var(--color-border-soft)] bg-white p-8 shadow-sm md:p-12">
                     <div className="max-w-3xl">
-                        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[#1e6585]">
+                        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-accent-blue)]">
                             Passons à l’action
                         </p>
 
@@ -18,21 +18,23 @@ export default function FinalCtaSection() {
                             {titre}
                         </h2>
 
-                        <div className="mb-8 h-1.5 w-24 rounded-full bg-[#e29e21]" />
+                        <div className="mb-8 h-1.5 w-24 rounded-full bg-[var(--color-accent-gold-strong)]" />
 
-                        <p className="mb-8 text-lg leading-8 text-[#1b364f]">{texte}</p>
+                        <p className="mb-8 text-lg leading-8 text-[var(--color-text-soft)]">{texte}</p>
 
                         <div className="flex flex-col gap-4 sm:flex-row">
                             <Link
                                 href="/contact"
-                                className="rounded-md bg-[#be8620] px-6 py-3 text-center font-semibold text-[#17202a] transition hover:bg-[#e29e21]"
+                                className="rounded-md bg-[var(--color-accent-gold)] px-6 py-3 text-center font-semibold
+                                text-[var(--color-bg-dark)] transition hover:bg-[var(--color-accent-gold-strong)]"
                             >
                                 {boutonPrincipal}
                             </Link>
 
                             <Link
                                 href="/prestations"
-                                className="rounded-md border border-[#1b364f] px-6 py-3 text-center font-semibold text-[#17202a] transition hover:bg-[#f4f6f8]"
+                                className="rounded-md border border-[var(--color-surface-dark)] px-6 py-3 text-center font-semibold
+                                text-[var(--color-text-dark)] transition hover:bg-[var(--color-bg-light)]"
                             >
                                 {boutonSecondaire}
                             </Link>

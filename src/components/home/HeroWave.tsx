@@ -1,6 +1,6 @@
 export default function HeroWave() {
     return (
-        <div className="relative overflow-hidden bg-[#f4f6f8]">
+        <div className="relative overflow-hidden bg-[var(--color-bg-light)]">
             <svg
                 viewBox="0 0 1440 170"
                 xmlns="http://www.w3.org/2000/svg"
