@@ -5,11 +5,14 @@
     --color-surface-dark: #1b364f;
     --color-accent-blue: #1e6585;
     --color-border-soft: #b8c2cf;
+
     /* --color-bg-light: #d7f3ff; */
     --color-bg-light: #eaf7fc;
+    --color-surface-light: #eef3f7;
     --color-accent-gold: #be8620;
     --color-accent-gold-strong: #e29e21;
-    --color-white: #ffffff;
+    --color-white: #f8fbfd;
+    --color-input-bg: #ffffff;
     --color-text-dark: #17202a;
     --color-text-soft: #1b364f;
 }

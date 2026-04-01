@@ -29,7 +29,7 @@ export default function PrestationsSection() {
                     ))}
                 </div>
 
-                <div className="mt-20 rounded-3xl border border-[var(--color-border-soft)] bg-[var(--color-white)] p-8 shadow-sm md:p-10">
+                <div className="mt-20 rounded-3xl border border-[var(--color-border-soft)] bg-[var(--color-surface-light)] p-8 shadow-sm md:p-10">
                     <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-accent-blue)]">
                         Besoin spécifique
                     </p>
@@ -48,8 +48,7 @@ export default function PrestationsSection() {
 
                     <a
                         href="/contact"
-                        className="inline-block rounded-md bg-[var(--color-accent-gold)] px-6 py-3 font-semibold
-                        text-[var(--color-bg-dark)] transition hover:bg-[var(--color-accent-gold-strong)]"
+                        className="inline-block rounded-md bg-[var(--color-accent-gold)] px-6 py-3 font-semibold text-[var(--color-bg-dark)] transition hover:bg-[var(--color-accent-gold-strong)]"
                     >
                         Nous contacter
                     </a>

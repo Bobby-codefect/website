@@ -18,17 +18,17 @@ export default function Header() {
                     <img
                         src="/logo-codefect-header.png"
                         alt="Logo Codefect"
-                        className="h-auto w-[210px] md:w-[260px]"
+                        className="h-auto w-[225px] md:w-[280px]"
                     />
                 </Link>
 
                 <nav aria-label="Navigation principale" className="hidden md:block">
-                    <ul className="flex items-center gap-8">
+                    <ul className="flex items-center gap-12">
                         {liensNavigation.map((lien) => (
                             <li key={lien.href}>
                                 <Link
                                     href={lien.href}
-                                    className="font-medium text-[var(--color-border-soft)] transition hover:text-white"
+                                    className="text-lg font-semibold text-[var(--color-border-soft)] transition hover:text-white"
                                 >
                                     {lien.label}
                                 </Link>

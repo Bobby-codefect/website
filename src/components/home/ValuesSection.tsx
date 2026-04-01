@@ -22,7 +22,7 @@ export default function ValuesSection() {
                     {items.map((item, index) => (
                         <article
                             key={item}
-                            className="rounded-3xl border border-[var(--color-border-soft)] bg-[var(--color-white)] p-6 shadow-sm"
+                            className="rounded-3xl border border-[var(--color-border-soft)] bg-[var(--color-surface-light)] p-6 shadow-sm"
                         >
                             <div className="mb-5 flex items-center gap-4">
                                 <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--color-accent-blue)] bg-[var(--color-bg-dark)] text-sm font-bold text-[var(--color-accent-gold-strong)]">
@@ -32,7 +32,9 @@ export default function ValuesSection() {
                                 <div className="h-px flex-1 bg-[var(--color-border-soft)]" />
                             </div>
 
-                            <p className="leading-7 text-[var(--color-text-soft)]">{item}</p>
+                            <p className="leading-7 text-[var(--color-text-soft)]">
+                                {item}
+                            </p>
                         </article>
                     ))}
                 </div>

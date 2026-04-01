@@ -6,8 +6,8 @@ export default function WhySection() {
     return (
         <section className="bg-[var(--color-bg-light)] text-[var(--color-text-dark)]">
             <div className="mx-auto max-w-7xl px-6 pb-20">
-                <div className="rounded-3xl border border-[var(--color-border-soft] bg-[var(--color-white)] p-8 shadow-sm md:p-10">
-                    <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[#1e6585]">
+                <div className="rounded-3xl border border-[var(--color-border-soft)] bg-[var(--color-surface-light)] p-8 shadow-sm md:p-10">
+                    <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-accent-blue)]">
                         Pourquoi
                     </p>
 
@@ -17,7 +17,9 @@ export default function WhySection() {
 
                     <div className="mb-8 h-1.5 w-24 rounded-full bg-[var(--color-accent-gold)]" />
 
-                    <p className="max-w-5xl text-lg leading-8 text-[var(--color-text-soft)]">{texte}</p>
+                    <p className="max-w-5xl text-lg leading-8 text-[var(--color-text-soft)]">
+                        {texte}
+                    </p>
                 </div>
             </div>
         </section>

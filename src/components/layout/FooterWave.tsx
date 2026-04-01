@@ -1,6 +1,6 @@
 export default function FooterWave() {
     return (
-        <div className="relative overflow-hidden bg-[#17202a]">
+        <div className="relative overflow-hidden bg-[var(--color-bg-dark)]">
             <svg
                 viewBox="0 0 1440 95"
                 xmlns="http://www.w3.org/2000/svg"
@@ -17,7 +17,7 @@ export default function FooterWave() {
             L1440,0
             Z
           "
-                    fill="#f4f6f8"
+                    fill="#eaf7fc"
                 />
 
                 {/* Bande bleu sombre */}
