@@ -18,7 +18,7 @@ export default function Footer() {
                         <div>
                             <h2 className="mb-4 text-2xl font-bold">Codefect</h2>
 
-                            <p className="max-w-2xl leading-7 text-[var(--color-border-soft)]">
+                            <p className="max-w-2xl leading-7 text-[var(--color-footer-text)]">
                                 Codefect accompagne les TPE et PME dans l’optimisation, la
                                 sécurisation et l’évolution de leurs outils numériques avec une
                                 approche adaptée à leurs besoins réels.
@@ -35,7 +35,7 @@ export default function Footer() {
                                     <li key={lien.href}>
                                         <Link
                                             href={lien.href}
-                                            className="text-[var(--color-border-soft)] transition hover:text-white"
+                                            className="text-[var(--color-footer-text)] transition hover:text-white"
                                         >
                                             {lien.label}
                                         </Link>
@@ -46,7 +46,7 @@ export default function Footer() {
                     </div>
 
                     <div className="mt-10 border-t border-[var(--color-accent-blue)] pt-6">
-                        <p className="text-sm text-[var(--color-border-soft)]">
+                        <p className="text-sm text-[var(--color-footer-text)]">
                             © 2026 Codefect. Tous droits réservés.
                         </p>
                     </div>

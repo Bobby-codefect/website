@@ -28,7 +28,7 @@ export default function Header() {
                             <li key={lien.href}>
                                 <Link
                                     href={lien.href}
-                                    className="text-lg font-semibold text-[var(--color-border-soft)] transition hover:text-white"
+                                    className="text-lg font-semibold text-[var(--color-header-text)] transition hover:text-white"
                                 >
                                     {lien.label}
                                 </Link>
