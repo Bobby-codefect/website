@@ -34,7 +34,7 @@ export async function POST(request: Request) {
         });
 
         return NextResponse.json(
-            { message: "Votre message a bien été envoyé." },
+            { message: "Votre message a bien été envoyé. Nous vous répondrons dès que possible." },
             { status: 200 }
         );
     } catch {

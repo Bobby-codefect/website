@@ -69,7 +69,7 @@ export default function ContactForm() {
                 return;
             }
 
-            setMessageSucces(data.message || "Votre message a bien été envoyé.");
+            setMessageSucces(data.message || "Votre message a bien été envoyé. Nous vous répondrons dès que possible.");
             setFormData({
                 nom: "",
                 email: "",

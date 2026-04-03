@@ -114,7 +114,7 @@ describe("POST /api/contact", () => {
 
         // La route doit renvoyer un succès.
         expect(response.status).toBe(200);
-        expect(data.message).toBe("Votre message a bien été envoyé.");
+        expect(data.message).toBe("Votre message a bien été envoyé. Nous vous répondrons dès que possible.");
 
         // On vérifie que le captcha a bien été vérifié.
         expect(verifyCaptcha).toHaveBeenCalledWith("fake-token");

@@ -127,7 +127,7 @@ describe("ContactForm", () => {
         const fetchMock = vi.spyOn(global, "fetch").mockResolvedValue({
             ok: true,
             json: async () => ({
-                message: "Votre message a bien été envoyé.",
+                message: "Votre message a bien été envoyé. Nous vous répondrons dès que possible.",
             }),
         } as Response);
 
@@ -164,7 +164,7 @@ describe("ContactForm", () => {
 
         // On vérifie que le message de succès apparaît.
         expect(
-            await screen.findByText("Votre message a bien été envoyé.")
+            await screen.findByText("Votre message a bien été envoyé. Nous vous répondrons dès que possible.")
         ).toBeInTheDocument();
 
         // On vérifie que l'appel API a bien été effectué.
