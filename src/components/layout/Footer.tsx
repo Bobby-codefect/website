@@ -41,6 +41,22 @@ export default function Footer() {
                                         </Link>
                                     </li>
                                 ))}
+                                <li>
+                                    <Link
+                                        href="/mentions-legales"
+                                        className="text-[var(--color-footer-text)] transition hover:text-white"
+                                    >
+                                        Mentions légales
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link
+                                        href="/politique-confidentialite"
+                                        className="text-[var(--color-footer-text)] transition hover:text-white"
+                                    >
+                                        Politique de confidentialité
+                                    </Link>
+                                </li>
                             </ul>
                         </div>
                     </div>

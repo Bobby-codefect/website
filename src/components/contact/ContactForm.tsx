@@ -187,6 +187,20 @@ export default function ContactForm() {
                 )}
             </div>
 
+            <p className="mt-5 max-w-4xl text-sm leading-7 text-[var(--color-text-soft)]">
+                Les informations recueillies via ce formulaire sont traitées par Codefect
+                afin de répondre à votre demande de contact. Les champs nom, e-mail et
+                message sont obligatoires. Vous disposez de droits sur vos données et
+                pouvez les exercer à l’adresse suivante : [E-mail RGPD]. Pour en savoir
+                plus, consultez notre{" "}
+                <a
+                    href="/politique-confidentialite"
+                    className="font-medium text-[var(--color-accent-blue)] underline underline-offset-2"
+                >
+                    politique de confidentialité
+                </a>.
+            </p>
+
             <div className="mt-8">
                 <button
                     type="submit"
