@@ -1,15 +1,15 @@
-export type BlocPrestation = {
+export type BlocService = {
     titre: string;
     points: string[];
 };
 
-export type CategoriePrestation = {
+export type CategorieService = {
     id: number;
     titre: string;
-    blocs: BlocPrestation[];
+    blocs: BlocService[];
 };
 
-export const prestations: CategoriePrestation[] = [
+export const services: CategorieService[] = [
     {
         id: 1,
         titre: "Infrastructure",

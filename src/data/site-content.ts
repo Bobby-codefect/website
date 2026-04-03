@@ -5,7 +5,7 @@ export const homeContent = {
         description:
             "Codefect accompagne les TPE et PME dans la transition, l’optimisation et la sécurisation de leurs outils informatiques avec des solutions pensées pour leurs besoins réels.",
         boutonPrincipal: "Nous contacter",
-        boutonSecondaire: "Découvrir nos prestations",
+        boutonSecondaire: "Découvrir nos services",
     },
 
     presentation: {
@@ -54,6 +54,6 @@ export const homeContent = {
         texte:
             "Vous souhaitez structurer, sécuriser ou faire évoluer vos outils numériques ? Codefect vous accompagne avec une approche adaptée à votre contexte et à vos objectifs.",
         boutonPrincipal: "Nous contacter",
-        boutonSecondaire: "Voir nos prestations",
+        boutonSecondaire: "Voir nos services",
     },
 };

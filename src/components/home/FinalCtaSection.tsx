@@ -33,7 +33,7 @@ export default function FinalCtaSection() {
                             </Link>
 
                             <Link
-                                href="/prestations"
+                                href="/services"
                                 className="rounded-md border border-[var(--color-surface-dark)] px-6 py-3 text-center font-semibold text-[var(--color-text-dark)] transition hover:bg-[var(--color-bg-light)]"
                             >
                                 {boutonSecondaire}

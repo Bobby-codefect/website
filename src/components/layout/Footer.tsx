@@ -3,7 +3,7 @@ import FooterWave from "@/components/layout/FooterWave";
 
 const liensNavigation = [
     { href: "/", label: "Accueil" },
-    { href: "/prestations", label: "Prestations" },
+    { href: "/services", label: "Services" },
     { href: "/contact", label: "Contact" },
 ];
 

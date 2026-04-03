@@ -1,10 +1,10 @@
-import type { CategoriePrestation } from "@/data/prestations";
+import type { CategorieService } from "@/data/services";
 
-type PrestationCardProps = {
-    categorie: CategoriePrestation;
+type ServiceCardProps = {
+    categorie: CategorieService;
 };
 
-export default function PrestationCard({ categorie }: PrestationCardProps) {
+export default function ServiceCard({ categorie }: ServiceCardProps) {
     return (
         <article className="rounded-3xl border border-[var(--color-border-soft)] bg-[var(--color-surface-light)] p-8 shadow-sm">
             <div className="mb-6">

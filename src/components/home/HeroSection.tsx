@@ -31,7 +31,7 @@ export default function HeroSection() {
                             </a>
 
                             <a
-                                href="/prestations"
+                                href="/services"
                                 className="rounded-md border border-[var(--color-border-soft)] px-6 py-3 text-center font-semibold text-white transition hover:bg-[var(--color-surface-dark)]"
                             >
                                 {boutonSecondaire}
