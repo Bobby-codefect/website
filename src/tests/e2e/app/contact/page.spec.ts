@@ -19,9 +19,31 @@ test.describe("Page Contact", () => {
         ).toBeVisible();
 
         // On vérifie que les champs principaux du formulaire sont présents.
-        await expect(page.getByLabel("Nom")).toBeVisible();
-        await expect(page.getByLabel("Email")).toBeVisible();
-        await expect(page.getByLabel("Message")).toBeVisible();
+        // Ici, on force une correspondance exacte pour éviter que "Nom"
+        // corresponde aussi à "Prénom".
+        await expect(
+            page.getByRole("textbox", { name: "Nom", exact: true })
+        ).toBeVisible();
+
+        await expect(
+            page.getByRole("textbox", { name: "Prénom", exact: true })
+        ).toBeVisible();
+
+        await expect(
+            page.getByRole("textbox", { name: "Société", exact: true })
+        ).toBeVisible();
+
+        await expect(
+            page.getByRole("textbox", { name: "Mail", exact: true })
+        ).toBeVisible();
+
+        await expect(
+            page.getByRole("textbox", { name: "Tél", exact: true })
+        ).toBeVisible();
+
+        await expect(
+            page.getByRole("textbox", { name: "Message", exact: true })
+        ).toBeVisible();
 
         // On vérifie que la zone de vérification anti-spam est visible.
         await expect(
@@ -39,20 +61,59 @@ test.describe("Page Contact", () => {
         await page.goto("/contact");
 
         // On remplit le champ Nom.
-        await page.getByLabel("Nom").fill("Jean");
+        await page
+            .getByRole("textbox", { name: "Nom", exact: true })
+            .fill("Dupont");
 
-        // On remplit le champ Email.
-        await page.getByLabel("Email").fill("Jean@test.com");
+        // On remplit le champ Prénom.
+        await page
+            .getByRole("textbox", { name: "Prénom", exact: true })
+            .fill("Jean");
+
+        // On remplit le champ Société.
+        await page
+            .getByRole("textbox", { name: "Société", exact: true })
+            .fill("Codefect");
+
+        // On remplit le champ Mail.
+        await page
+            .getByRole("textbox", { name: "Mail", exact: true })
+            .fill("jean@test.com");
+
+        // On remplit le champ Tél.
+        await page
+            .getByRole("textbox", { name: "Tél", exact: true })
+            .fill("06 12 34 56 78");
 
         // On remplit le champ Message.
         await page
-            .getByLabel("Message")
+            .getByRole("textbox", { name: "Message", exact: true })
             .fill("Bonjour, je souhaite vous contacter pour échanger sur mon projet.");
 
         // On vérifie que chaque champ contient bien la valeur saisie.
-        await expect(page.getByLabel("Nom")).toHaveValue("Jean");
-        await expect(page.getByLabel("Email")).toHaveValue("Jean@test.com");
-        await expect(page.getByLabel("Message")).toHaveValue(
+        await expect(
+            page.getByRole("textbox", { name: "Nom", exact: true })
+        ).toHaveValue("Dupont");
+
+        await expect(
+            page.getByRole("textbox", { name: "Prénom", exact: true })
+        ).toHaveValue("Jean");
+
+        await expect(
+            page.getByRole("textbox", { name: "Société", exact: true })
+        ).toHaveValue("Codefect");
+
+        await expect(
+            page.getByRole("textbox", { name: "Mail", exact: true })
+        ).toHaveValue("jean@test.com");
+
+        await expect(
+            page.getByRole("textbox", { name: "Tél", exact: true })
+        ).toHaveValue("06 12 34 56 78");
+
+        await expect(
+            page.getByRole("textbox", { name: "Message", exact: true })
+        ).toHaveValue(
             "Bonjour, je souhaite vous contacter pour échanger sur mon projet."
         );
     });

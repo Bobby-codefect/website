@@ -5,7 +5,6 @@ import { verifyCaptcha } from "@/lib/contact/verify-captcha";
 import { sendContactEmail } from "@/lib/contact/send-email";
 
 export async function POST(request: Request) {
-
     try {
         const body: ContactFormData = await request.json();
 
@@ -29,12 +28,18 @@ export async function POST(request: Request) {
 
         await sendContactEmail({
             nom: body.nom.trim(),
+            prenom: body.prenom.trim(),
+            societe: body.societe.trim(),
             email: body.email.trim(),
+            telephone: body.telephone.trim(),
             message: body.message.trim(),
         });
 
         return NextResponse.json(
-            { message: "Votre message a bien été envoyé. Nous vous répondrons dès que possible." },
+            {
+                message:
+                    "Votre message a bien été envoyé. Nous vous répondrons dès que possible.",
+            },
             { status: 200 }
         );
     } catch {

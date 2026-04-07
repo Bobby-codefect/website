@@ -22,7 +22,10 @@ describe("POST /api/contact", () => {
     });
 
     it("retourne 400 si les champs obligatoires sont absents", async () => {
-        // On construit une fausse requête HTTP POST avec un body JSON invalide.
+        // La route attend maintenant :
+        // nom, prenom, societe, email, telephone, message, captchaToken
+        // Donc on fournit ici des champs vides pour vérifier que
+        // la validation serveur refuse bien la requête.
         const request = new Request("http://localhost:3000/api/contact", {
             method: "POST",
             headers: {
@@ -30,29 +33,26 @@ describe("POST /api/contact", () => {
             },
             body: JSON.stringify({
                 nom: "",
+                prenom: "",
+                societe: "",
                 email: "",
+                telephone: "",
                 message: "",
                 captchaToken: "",
             }),
         });
 
-        // On appelle directement la fonction POST de la route.
         const response = await POST(request);
-
-        // On lit le contenu JSON renvoyé par la route.
         const data = await response.json();
 
-        // On vérifie que la route renvoie bien une erreur 400.
         expect(response.status).toBe(400);
-
-        // On vérifie que le message d'erreur est le bon.
         expect(data.message).toBe("Tous les champs sont obligatoires.");
 
-        // On vérifie que le captcha n'est même pas testé
-        // car la validation des champs échoue avant.
+        // Le captcha n'est pas testé car la validation des champs
+        // échoue avant.
         expect(verifyCaptcha).not.toHaveBeenCalled();
 
-        // On vérifie aussi qu'aucun email n'est envoyé.
+        // Aucun email ne doit être envoyé.
         expect(sendContactEmail).not.toHaveBeenCalled();
     });
 
@@ -66,8 +66,11 @@ describe("POST /api/contact", () => {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                nom: "Jean",
+                nom: "Dupont",
+                prenom: "Jean",
+                societe: "Codefect",
                 email: "jean@test.com",
+                telephone: "06 12 34 56 78",
                 message: "Bonjour, je souhaite vous contacter.",
                 captchaToken: "fake-token",
             }),
@@ -102,8 +105,11 @@ describe("POST /api/contact", () => {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                nom: "Jean",
+                nom: "Dupont",
+                prenom: "Jean",
+                societe: "Codefect",
                 email: "jean@test.com",
+                telephone: "06 12 34 56 78",
                 message: "Bonjour, je souhaite vous contacter.",
                 captchaToken: "fake-token",
             }),
@@ -114,45 +120,49 @@ describe("POST /api/contact", () => {
 
         // La route doit renvoyer un succès.
         expect(response.status).toBe(200);
-        expect(data.message).toBe("Votre message a bien été envoyé. Nous vous répondrons dès que possible.");
+        expect(data.message).toBe(
+            "Votre message a bien été envoyé. Nous vous répondrons dès que possible."
+        );
 
         // On vérifie que le captcha a bien été vérifié.
         expect(verifyCaptcha).toHaveBeenCalledWith("fake-token");
 
         // On vérifie que l'envoi d'email a bien été demandé
-        // avec les bonnes données nettoyées.
+        // avec les nouvelles données attendues par la fonction.
         expect(sendContactEmail).toHaveBeenCalledWith({
-            nom: "Jean",
+            nom: "Dupont",
+            prenom: "Jean",
+            societe: "Codefect",
             email: "jean@test.com",
+            telephone: "06 12 34 56 78",
             message: "Bonjour, je souhaite vous contacter.",
         });
     });
 
     it("retourne 400 si l'email est invalide", async () => {
         // On construit une requête avec un email invalide.
+        // Les autres champs obligatoires sont bien remplis,
+        // sinon on testerait autre chose que l'email.
         const request = new Request("http://localhost:3000/api/contact", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                nom: "Jean",
+                nom: "Dupont",
+                prenom: "Jean",
+                societe: "Codefect",
                 email: "test",
+                telephone: "06 12 34 56 78",
                 message: "Bonjour, je souhaite vous contacter.",
                 captchaToken: "fake-token",
             }),
         });
 
-        // On appelle la route API.
         const response = await POST(request);
-
-        // On lit la réponse JSON.
         const data = await response.json();
 
-        // La route doit refuser la requête.
         expect(response.status).toBe(400);
-
-        // On vérifie le message d'erreur attendu.
         expect(data.message).toBe("Veuillez saisir une adresse email valide.");
 
         // Comme la validation échoue avant le captcha,
@@ -160,6 +170,36 @@ describe("POST /api/contact", () => {
         expect(verifyCaptcha).not.toHaveBeenCalled();
 
         // Aucun email ne doit être envoyé.
+        expect(sendContactEmail).not.toHaveBeenCalled();
+    });
+
+    it("retourne 400 si le téléphone est invalide", async () => {
+        // Nouveau cas utile maintenant que le téléphone est obligatoire :
+        // on vérifie que la validation serveur bloque un numéro invalide.
+        const request = new Request("http://localhost:3000/api/contact", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                nom: "Dupont",
+                prenom: "Jean",
+                societe: "Codefect",
+                email: "jean@test.com",
+                telephone: "12",
+                message: "Bonjour, je souhaite vous contacter.",
+                captchaToken: "fake-token",
+            }),
+        });
+
+        const response = await POST(request);
+        const data = await response.json();
+
+        expect(response.status).toBe(400);
+        expect(data.message).toBe("Veuillez saisir un numéro de téléphone valide.");
+
+        // La validation échoue avant le captcha.
+        expect(verifyCaptcha).not.toHaveBeenCalled();
         expect(sendContactEmail).not.toHaveBeenCalled();
     });
 });

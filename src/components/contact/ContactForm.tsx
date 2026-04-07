@@ -13,7 +13,10 @@ const TurnstileWidget = dynamic(
 export default function ContactForm() {
     const [formData, setFormData] = useState<ContactFormData>({
         nom: "",
+        prenom: "",
+        societe: "",
         email: "",
+        telephone: "",
         message: "",
         captchaToken: "",
     });
@@ -36,7 +39,7 @@ export default function ContactForm() {
         setMessageSucces("");
     }
 
-    const handleSubmit: React.SubmitEventHandler<HTMLFormElement> = async (
+    const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (
         event
     ) => {
         event.preventDefault();
@@ -69,10 +72,13 @@ export default function ContactForm() {
                 return;
             }
 
-            setMessageSucces(data.message || "Votre message a bien été envoyé. Nous vous répondrons dès que possible.");
+            setMessageSucces(data.message || "Votre message a bien été envoyé.");
             setFormData({
                 nom: "",
+                prenom: "",
+                societe: "",
                 email: "",
+                telephone: "",
                 message: "",
                 captchaToken: "",
             });
@@ -113,10 +119,46 @@ export default function ContactForm() {
 
                 <div>
                     <label
+                        htmlFor="prenom"
+                        className="mb-2 block text-base font-semibold text-[var(--color-text-soft)]"
+                    >
+                        Prénom
+                    </label>
+                    <input
+                        id="prenom"
+                        name="prenom"
+                        type="text"
+                        value={formData.prenom}
+                        onChange={handleChange}
+                        className="w-full rounded-xl border border-[var(--color-border-soft)] bg-[var(--color-input-bg)] px-4 py-3 text-[var(--color-text-dark)] outline-none transition placeholder:text-[#7e8b99] focus:border-[var(--color-accent-blue)]"
+                        placeholder="Votre prénom"
+                    />
+                </div>
+
+                <div>
+                    <label
+                        htmlFor="societe"
+                        className="mb-2 block text-base font-semibold text-[var(--color-text-soft)]"
+                    >
+                        Société
+                    </label>
+                    <input
+                        id="societe"
+                        name="societe"
+                        type="text"
+                        value={formData.societe}
+                        onChange={handleChange}
+                        className="w-full rounded-xl border border-[var(--color-border-soft)] bg-[var(--color-input-bg)] px-4 py-3 text-[var(--color-text-dark)] outline-none transition placeholder:text-[#7e8b99] focus:border-[var(--color-accent-blue)]"
+                        placeholder="Votre société"
+                    />
+                </div>
+
+                <div>
+                    <label
                         htmlFor="email"
                         className="mb-2 block text-base font-semibold text-[var(--color-text-soft)]"
                     >
-                        Email
+                        Mail
                     </label>
                     <input
                         id="email"
@@ -126,6 +168,24 @@ export default function ContactForm() {
                         onChange={handleChange}
                         className="w-full rounded-xl border border-[var(--color-border-soft)] bg-[var(--color-input-bg)] px-4 py-3 text-[var(--color-text-dark)] outline-none transition placeholder:text-[#7e8b99] focus:border-[var(--color-accent-blue)]"
                         placeholder="votre@email.com"
+                    />
+                </div>
+
+                <div className="md:col-span-2">
+                    <label
+                        htmlFor="telephone"
+                        className="mb-2 block text-base font-semibold text-[var(--color-text-soft)]"
+                    >
+                        Tél
+                    </label>
+                    <input
+                        id="telephone"
+                        name="telephone"
+                        type="tel"
+                        value={formData.telephone}
+                        onChange={handleChange}
+                        className="w-full rounded-xl border border-[var(--color-border-soft)] bg-[var(--color-input-bg)] px-4 py-3 text-[var(--color-text-dark)] outline-none transition placeholder:text-[#7e8b99] focus:border-[var(--color-accent-blue)]"
+                        placeholder="Votre numéro de téléphone"
                     />
                 </div>
             </div>
@@ -189,21 +249,16 @@ export default function ContactForm() {
                 )}
             </div>
 
-            <p className="mt-5 max-w-4xl text-sm leading-7 text-[var(--color-text-soft)]">
-                Les informations recueillies via ce formulaire sont traitées par Codefect
-                afin de répondre à votre demande de contact. Les champs nom, e-mail et
-                message sont obligatoires. Vous disposez de droits sur vos données et
-                pouvez les exercer à l’adresse suivante : [E-mail RGPD]. Pour en savoir
-                plus, consultez notre{" "}
-                <a
-                    href="/politique-confidentialite"
-                    className="font-medium text-[var(--color-accent-blue)] underline underline-offset-2"
-                >
-                    politique de confidentialité
-                </a>.
+            <p className="mt-6 max-w-4xl text-sm leading-7 text-[var(--color-text-soft)]">
+                Les informations recueillies via ce formulaire sont traitées par
+                Codefect afin de répondre à votre demande de contact. Les champs
+                nom, prénom, société, e-mail, téléphone et message sont
+                obligatoires. Vous disposez de droits sur vos données et pouvez
+                les exercer à l’adresse suivante : [E-mail RGPD]. Pour en savoir
+                plus, consultez notre politique de confidentialité.
             </p>
 
-            <div className="mt-8">
+            <div className="mt-6">
                 <button
                     type="submit"
                     disabled={isSubmitDisabled}

@@ -8,8 +8,8 @@ import ContactForm from "@/components/contact/ContactForm";
 // Cela permet de débloquer le bouton "Envoyer" dans les tests.
 vi.mock("@/components/contact/TurnstileWidget", () => ({
     default: function TurnstileWidget({
-        onSuccess,
-    }: {
+                                          onSuccess,
+                                      }: {
         onSuccess: (token: string) => void;
     }) {
         return (
@@ -25,10 +25,16 @@ describe("ContactForm", () => {
         // render() sert à afficher le composant dans l'environnement de test.
         render(<ContactForm />);
 
-        // On vérifie que les champs principaux et le bouton sont présents.
+        // On vérifie que tous les champs maintenant attendus par le formulaire
+        // sont bien visibles à l'écran.
         expect(screen.getByLabelText("Nom")).toBeInTheDocument();
-        expect(screen.getByLabelText("Email")).toBeInTheDocument();
+        expect(screen.getByLabelText("Prénom")).toBeInTheDocument();
+        expect(screen.getByLabelText("Société")).toBeInTheDocument();
+        expect(screen.getByLabelText("Mail")).toBeInTheDocument();
+        expect(screen.getByLabelText("Tél")).toBeInTheDocument();
         expect(screen.getByLabelText("Message")).toBeInTheDocument();
+
+        // On vérifie aussi la présence du bouton principal.
         expect(
             screen.getByRole("button", { name: "Envoyer" })
         ).toBeInTheDocument();
@@ -55,12 +61,26 @@ describe("ContactForm", () => {
     it("affiche une erreur si l'email saisi est invalide", async () => {
         render(<ContactForm />);
 
+        // Ici, on remplit tous les autres champs obligatoires correctement,
+        // pour isoler uniquement le problème d'email.
         fireEvent.change(screen.getByLabelText("Nom"), {
+            target: { value: "Dupont" },
+        });
+
+        fireEvent.change(screen.getByLabelText("Prénom"), {
             target: { value: "Paul" },
         });
 
-        fireEvent.change(screen.getByLabelText("Email"), {
+        fireEvent.change(screen.getByLabelText("Société"), {
+            target: { value: "Codefect" },
+        });
+
+        fireEvent.change(screen.getByLabelText("Mail"), {
             target: { value: "test" },
+        });
+
+        fireEvent.change(screen.getByLabelText("Tél"), {
+            target: { value: "06 12 34 56 78" },
         });
 
         fireEvent.change(screen.getByLabelText("Message"), {
@@ -71,13 +91,12 @@ describe("ContactForm", () => {
             screen.getByRole("button", { name: "Valider le captcha simulé" })
         );
 
+        // Si le captcha est validé, le bouton ne doit plus être désactivé.
         expect(
             screen.getByRole("button", { name: "Envoyer" })
         ).not.toBeDisabled();
 
         fireEvent.click(screen.getByRole("button", { name: "Envoyer" }));
-
-        screen.debug();
 
         expect(
             await screen.findByText("Veuillez saisir une adresse email valide.")
@@ -88,17 +107,28 @@ describe("ContactForm", () => {
         // On affiche le composant dans l'environnement de test.
         render(<ContactForm />);
 
-        // On remplit le champ Nom avec une valeur valide.
+        // On remplit tous les champs obligatoires avec des valeurs valides,
+        // sauf le message qui sera volontairement trop court.
         fireEvent.change(screen.getByLabelText("Nom"), {
+            target: { value: "Dupont" },
+        });
+
+        fireEvent.change(screen.getByLabelText("Prénom"), {
             target: { value: "Paul" },
         });
 
-        // On remplit le champ Email avec une adresse valide.
-        fireEvent.change(screen.getByLabelText("Email"), {
+        fireEvent.change(screen.getByLabelText("Société"), {
+            target: { value: "Codefect" },
+        });
+
+        fireEvent.change(screen.getByLabelText("Mail"), {
             target: { value: "Paul@test.com" },
         });
 
-        // On remplit le champ Message avec un texte trop court.
+        fireEvent.change(screen.getByLabelText("Tél"), {
+            target: { value: "06 12 34 56 78" },
+        });
+
         fireEvent.change(screen.getByLabelText("Message"), {
             target: { value: "Bonjour" },
         });
@@ -122,6 +152,46 @@ describe("ContactForm", () => {
         ).toBeInTheDocument();
     });
 
+    it("affiche une erreur si le téléphone est invalide", async () => {
+        // Ce test est nouveau et logique maintenant :
+        // le téléphone est obligatoire et validé côté formulaire.
+        render(<ContactForm />);
+
+        fireEvent.change(screen.getByLabelText("Nom"), {
+            target: { value: "Dupont" },
+        });
+
+        fireEvent.change(screen.getByLabelText("Prénom"), {
+            target: { value: "Paul" },
+        });
+
+        fireEvent.change(screen.getByLabelText("Société"), {
+            target: { value: "Codefect" },
+        });
+
+        fireEvent.change(screen.getByLabelText("Mail"), {
+            target: { value: "Paul@test.com" },
+        });
+
+        fireEvent.change(screen.getByLabelText("Tél"), {
+            target: { value: "12" },
+        });
+
+        fireEvent.change(screen.getByLabelText("Message"), {
+            target: { value: "Bonjour, je souhaite vous contacter." },
+        });
+
+        fireEvent.click(
+            screen.getByRole("button", { name: "Valider le captcha simulé" })
+        );
+
+        fireEvent.click(screen.getByRole("button", { name: "Envoyer" }));
+
+        expect(
+            await screen.findByText("Veuillez saisir un numéro de téléphone valide.")
+        ).toBeInTheDocument();
+    });
+
     it("affiche un message de succès quand le formulaire est valide", async () => {
         // On simule la réponse de l'API /api/contact.
         const fetchMock = vi.spyOn(global, "fetch").mockResolvedValue({
@@ -134,17 +204,27 @@ describe("ContactForm", () => {
         // On affiche le composant dans l'environnement de test.
         render(<ContactForm />);
 
-        // On remplit le champ Nom avec une valeur valide.
+        // On remplit tous les champs obligatoires avec des valeurs valides.
         fireEvent.change(screen.getByLabelText("Nom"), {
+            target: { value: "Dupont" },
+        });
+
+        fireEvent.change(screen.getByLabelText("Prénom"), {
             target: { value: "Paul" },
         });
 
-        // On remplit le champ Email avec une adresse valide.
-        fireEvent.change(screen.getByLabelText("Email"), {
+        fireEvent.change(screen.getByLabelText("Société"), {
+            target: { value: "Codefect" },
+        });
+
+        fireEvent.change(screen.getByLabelText("Mail"), {
             target: { value: "Paul@test.com" },
         });
 
-        // On remplit le champ Message avec un texte valide.
+        fireEvent.change(screen.getByLabelText("Tél"), {
+            target: { value: "06 12 34 56 78" },
+        });
+
         fireEvent.change(screen.getByLabelText("Message"), {
             target: { value: "Bonjour, je souhaite vous contacter." },
         });
@@ -164,18 +244,24 @@ describe("ContactForm", () => {
 
         // On vérifie que le message de succès apparaît.
         expect(
-            await screen.findByText("Votre message a bien été envoyé. Nous vous répondrons dès que possible.")
+            await screen.findByText(
+                "Votre message a bien été envoyé. Nous vous répondrons dès que possible."
+            )
         ).toBeInTheDocument();
 
-        // On vérifie que l'appel API a bien été effectué.
+        // On vérifie que l'appel API a bien été effectué
+        // avec toutes les nouvelles données attendues.
         expect(fetchMock).toHaveBeenCalledWith("/api/contact", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                nom: "Paul",
+                nom: "Dupont",
+                prenom: "Paul",
+                societe: "Codefect",
                 email: "Paul@test.com",
+                telephone: "06 12 34 56 78",
                 message: "Bonjour, je souhaite vous contacter.",
                 captchaToken: "fake-token",
             }),
@@ -183,11 +269,13 @@ describe("ContactForm", () => {
 
         // On vérifie que les champs ont été réinitialisés après succès.
         expect(screen.getByLabelText("Nom")).toHaveValue("");
-        expect(screen.getByLabelText("Email")).toHaveValue("");
+        expect(screen.getByLabelText("Prénom")).toHaveValue("");
+        expect(screen.getByLabelText("Société")).toHaveValue("");
+        expect(screen.getByLabelText("Mail")).toHaveValue("");
+        expect(screen.getByLabelText("Tél")).toHaveValue("");
         expect(screen.getByLabelText("Message")).toHaveValue("");
 
         // On nettoie le mock pour éviter d'impacter les autres tests.
         fetchMock.mockRestore();
     });
-
 });
