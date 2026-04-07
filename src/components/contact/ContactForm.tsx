@@ -160,25 +160,27 @@ export default function ContactForm() {
                 </p>
             )}
 
-            <div className="mt-8 rounded-2xl border border-[var(--color-border-soft)] bg-[var(--color-surface-light)] p-6">
+            <div className="mt-8 rounded-2xl border border-[var(--color-border-soft)] bg-[var(--color-surface-light)] p-4 sm:p-6">
                 <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-accent-blue)]">
                     Vérification anti-spam
                 </p>
 
-                <TurnstileWidget
-                    onSuccess={(token) =>
-                        setFormData((previousData) => ({
-                            ...previousData,
-                            captchaToken: token,
-                        }))
-                    }
-                    onExpire={() =>
-                        setFormData((previousData) => ({
-                            ...previousData,
-                            captchaToken: "",
-                        }))
-                    }
-                />
+                <div className="max-w-full">
+                    <TurnstileWidget
+                        onSuccess={(token) =>
+                            setFormData((previousData) => ({
+                                ...previousData,
+                                captchaToken: token,
+                            }))
+                        }
+                        onExpire={() =>
+                            setFormData((previousData) => ({
+                                ...previousData,
+                                captchaToken: "",
+                            }))
+                        }
+                    />
+                </div>
 
                 {!captchaValide && (
                     <p className="mt-4 text-sm text-[var(--color-text-soft)]">

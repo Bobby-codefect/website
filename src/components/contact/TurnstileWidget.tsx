@@ -18,6 +18,7 @@ declare global {
                     callback: (token: string) => void;
                     "expired-callback"?: () => void;
                     "error-callback"?: () => void;
+                    size?: "normal" | "compact" | "flexible";
                 }
             ) => void;
         };
@@ -41,8 +42,11 @@ export default function TurnstileWidget({
             return;
         }
 
+        const isMobile = window.innerWidth < 640;
+
         window.turnstile.render(element, {
             sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "",
+            size: isMobile ? "compact" : "normal",
             callback: (token: string) => {
                 onSuccess(token);
             },
@@ -67,7 +71,7 @@ export default function TurnstileWidget({
                 onReady={renderWidget}
             />
 
-            <div id={widgetId} />
+            <div id={widgetId} className="max-w-full" />
         </>
     );
 }
