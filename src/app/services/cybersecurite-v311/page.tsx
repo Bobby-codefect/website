@@ -2,32 +2,32 @@ const cybersecurityTopics = [
     {
         title: "Audit et Conseil",
         description:
-            "Contenu à compléter sur les audits, l’analyse des risques et l’accompagnement stratégique en cybersécurité.",
+            "Codefect accompagne les entreprises dans l’évaluation de leur niveau de sécurité et dans l’identification des risques liés à leur système d’information. L’objectif est de disposer d’une vision claire de l’existant, de prioriser les actions à mener et de construire une stratégie de cybersécurité cohérente avec les besoins réels de l’organisation..",
     },
     {
         title: "Rédaction de process et documents",
         description:
-            "Contenu à compléter sur la formalisation des procédures, politiques et documents liés à la sécurité.",
+            "Codefect intervient dans la formalisation des procédures et des documents nécessaires à une bonne gestion de la sécurité. Cette démarche permet de structurer les pratiques internes, de clarifier les responsabilités et de mettre en place un cadre documentaire adapté au fonctionnement de l’entreprise.",
     },
     {
         title: "Services de cybersécurité",
         description:
-            "Contenu à compléter sur les prestations opérationnelles de protection et de sécurisation du système d’information.",
+            "Codefect propose des services opérationnels destinés à renforcer la sécurité du système d’information. Ces prestations visent à protéger les environnements, à réduire les vulnérabilités et à mettre en œuvre des solutions adaptées au contexte technique et organisationnel de chaque client.",
     },
     {
         title: "Monitoring de la sécurité",
         description:
-            "Contenu à compléter sur la surveillance de la sécurité, la détection d’anomalies et le suivi des incidents.",
+            "Codefect accompagne la mise en place d’un suivi de la sécurité afin de mieux détecter les comportements anormaux, identifier les signaux faibles et améliorer la réactivité face aux incidents. Le monitoring permet d’inscrire la cybersécurité dans une logique de vigilance continue.",
     },
     {
         title: "Sécurité par l'architecture du SI",
         description:
-            "Contenu à compléter sur la sécurisation du système d’information par sa conception, sa structure et ses composants techniques.",
+            "Codefect intègre la cybersécurité dans la conception et l’organisation du système d’information. L’objectif est de construire une architecture plus robuste, plus lisible et plus maîtrisée, afin de limiter les risques dès la base et de favoriser une évolution sécurisée des environnements.",
     },
     {
         title: "Sécurité par les process",
         description:
-            "Contenu à compléter sur les méthodes organisationnelles, les règles internes et les processus de gestion de la sécurité.",
+            "Codefect considère que la sécurité ne repose pas uniquement sur les outils, mais aussi sur les méthodes de travail et les règles internes. L’accompagnement porte donc également sur les processus de gestion, les pratiques organisationnelles et la mise en place de fonctionnements plus sécurisés au quotidien.",
     },
 ];
 
@@ -40,7 +40,7 @@ export default function CybersecuriteV31Page() {
                     backgroundImage: "url('/images/background-cybersecurite.png')",
                 }}
             >
-                <div className="bg-[rgba(23,32,42,0.42)]">  {/* Overlay sombre du haut */}
+                <div className="bg-[rgba(23,32,42,0.42)]">  {/* Overlay sombre du bg */}
                     <div className="mx-auto max-w-7xl px-6 py-20">
                         <div className="max-w-4xl">
                             <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[#d7f3ff]">
