@@ -57,13 +57,7 @@ export default function InfrastructureV2Page() {
                 </div>
             </section>
 
-            <section
-                className="bg-cover bg-center bg-no-repeat text-[var(--color-text-dark)] md:bg-fixed"
-                style={{
-                    backgroundImage:
-                        "url('/images/background-infrastructure.webp')",
-                }}
-            >
+            <section className="text-[var(--color-text-dark)]">
                 <div className="bg-[rgba(23,32,42,0.35)]">
                     <div className="mx-auto max-w-7xl px-6 py-20">
                         <div className="grid gap-8 md:grid-cols-2">
