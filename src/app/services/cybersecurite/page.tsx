@@ -57,20 +57,14 @@ export default function CybersecuriteV31Page() {
                 </div>
             </section>
 
-            <section
-                className="bg-cover bg-center bg-no-repeat text-[var(--color-text-dark)] md:bg-fixed"
-                style={{
-                    backgroundImage:
-                        "url('/images/background-cybersecurite.webp')",
-                }}
-            >
+            <section className="text-[var(--color-text-dark)]">
                 <div className="bg-[rgba(23,32,42,0.35)]">
                     <div className="mx-auto max-w-7xl px-6 py-20">
                         <div className="grid gap-8 md:grid-cols-2">
                             {cybersecurityTopics.map((topic) => (
                                 <article
                                     key={topic.title}
-                                    className="rounded-3xl border border-[var(--color-border-soft)] bg-[rgba(248,251,253,0.94)] p-8 shadow-sm backdrop-blur-sm"
+                                    className="rounded-3xl border border-[var(--color-border-soft)] bg-white p-8 shadow-sm"
                                 >
                                     <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-[var(--color-accent-blue)]">
                                         Domaine

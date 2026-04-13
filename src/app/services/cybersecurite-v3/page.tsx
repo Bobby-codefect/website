@@ -1,37 +1,37 @@
-const infrastructureTopics = [
+const cybersecurityTopics = [
     {
-        title: "Architecture et urbanisation",
+        title: "Audit et Conseil",
         description:
-            "Contenu à compléter sur la structuration de l’infrastructure, l’organisation des environnements et la cohérence globale du système d’information.",
+            "Contenu à compléter sur les audits, l’analyse des risques et l’accompagnement stratégique en cybersécurité.",
     },
     {
-        title: "Serveurs et environnements",
+        title: "Rédaction de process et documents",
         description:
-            "Contenu à compléter sur la mise en place, la gestion et l’évolution des serveurs ainsi que des environnements techniques.",
+            "Contenu à compléter sur la formalisation des procédures, politiques et documents liés à la sécurité.",
     },
     {
-        title: "Réseaux et connectivité",
+        title: "Services de cybersécurité",
         description:
-            "Contenu à compléter sur l’interconnexion des systèmes, la qualité des échanges réseau et la continuité de service.",
+            "Contenu à compléter sur les prestations opérationnelles de protection et de sécurisation du système d’information.",
     },
     {
-        title: "Supervision et disponibilité",
+        title: "Monitoring de la sécurité",
         description:
-            "Contenu à compléter sur la surveillance de l’infrastructure, la détection d’incidents et le maintien en conditions opérationnelles.",
+            "Contenu à compléter sur la surveillance de la sécurité, la détection d’anomalies et le suivi des incidents.",
     },
     {
-        title: "Performance et capacité",
+        title: "Sécurité par l'architecture du SI",
         description:
-            "Contenu à compléter sur l’optimisation des ressources, l’anticipation de la charge et l’adaptation aux besoins de l’activité.",
+            "Contenu à compléter sur la sécurisation du système d’information par sa conception, sa structure et ses composants techniques.",
     },
     {
-        title: "Continuité et résilience",
+        title: "Sécurité par les process",
         description:
-            "Contenu à compléter sur la robustesse de l’infrastructure, la reprise d’activité et la réduction des points de défaillance.",
+            "Contenu à compléter sur les méthodes organisationnelles, les règles internes et les processus de gestion de la sécurité.",
     },
 ];
 
-export default function InfrastructureV2Page() {
+export default function CybersecuriteV31Page() {
     return (
         <>
             <section className="bg-[var(--color-bg-light)] text-[var(--color-text-dark)]">
@@ -42,16 +42,16 @@ export default function InfrastructureV2Page() {
                         </p>
 
                         <h1 className="mb-6 text-4xl font-bold leading-tight md:text-5xl xl:text-6xl">
-                            Infrastructure
+                            Cybersécurité
                         </h1>
 
                         <div className="mb-8 h-1.5 w-24 rounded-full bg-[var(--color-accent-gold-strong)]" />
 
                         <p className="max-w-3xl text-lg leading-8 text-[var(--color-text-soft)]">
-                            Codefect accompagne les entreprises dans la conception,
-                            l’organisation et l’évolution de leur infrastructure afin
-                            de garantir un socle technique fiable, performant et
-                            adapté à leurs enjeux.
+                            Codefect accompagne les entreprises sur les enjeux de
+                            cybersécurité en combinant audit, organisation,
+                            architecture et services opérationnels adaptés à leur
+                            contexte.
                         </p>
                     </div>
                 </div>
@@ -61,16 +61,16 @@ export default function InfrastructureV2Page() {
                 className="bg-cover bg-center bg-no-repeat text-[var(--color-text-dark)] md:bg-fixed"
                 style={{
                     backgroundImage:
-                        "url('/images/background-infrastructure.webp')",
+                        "url('/images/background-cybersecurite.webp')",
                 }}
             >
-                <div className="bg-[rgba(23,32,42,0.35)]">
+                <div className="bg-[rgba(248,251,253,0.72)]">
                     <div className="mx-auto max-w-7xl px-6 py-20">
                         <div className="grid gap-8 md:grid-cols-2">
-                            {infrastructureTopics.map((topic) => (
+                            {cybersecurityTopics.map((topic) => (
                                 <article
                                     key={topic.title}
-                                    className="rounded-3xl border border-[var(--color-border-soft)] bg-white p-8 shadow-sm"
+                                    className="rounded-3xl border border-white bg-white p-8 shadow-md"
                                 >
                                     <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-[var(--color-accent-blue)]">
                                         Domaine
@@ -100,14 +100,13 @@ export default function InfrastructureV2Page() {
                         </p>
 
                         <h2 className="mb-6 text-3xl font-bold leading-tight md:text-4xl">
-                            Une infrastructure conçue pour soutenir durablement l’activité.
+                            Une cybersécurité pensée pour durer.
                         </h2>
 
                         <p className="leading-8 text-[var(--color-text-soft)]">
-                            Codefect accompagne ses clients dans la mise en place
-                            d’une infrastructure cohérente, évolutive et résiliente,
-                            pensée pour répondre aux besoins techniques, métiers et
-                            organisationnels.
+                            Codefect accompagne ses clients dans la construction
+                            d’une sécurité cohérente, progressive et adaptée à leur
+                            environnement technique, organisationnel et humain.
                         </p>
                     </div>
                 </div>
