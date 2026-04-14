@@ -19,16 +19,6 @@ const customAutomationTopics = [
         description:
             "Codefect met en place des automatisations pour limiter les actions répétitives, réduire les erreurs manuelles et faire gagner du temps aux équipes. Cette démarche permet d’améliorer la fiabilité des traitements tout en allégeant la charge opérationnelle.",
     },
-    {
-        title: "Adaptation aux besoins métiers",
-        description:
-            "Chaque entreprise ayant son propre fonctionnement, Codefect construit des solutions qui tiennent compte des usages réels, des contraintes internes et des objectifs opérationnels. Le sur-mesure permet ainsi de répondre plus justement aux besoins sans imposer un cadre inadapté.",
-    },
-    {
-        title: "Évolution et amélioration continue",
-        description:
-            "Les solutions développées peuvent évoluer avec l’activité et les nouveaux besoins identifiés. Codefect accompagne cette progression afin de faire vivre les outils dans le temps, sans remettre en cause l’ensemble de l’existant à chaque évolution.",
-    },
 ];
 
 export default function SurMesureAutomatisationPage() {
