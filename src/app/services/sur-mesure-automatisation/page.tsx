@@ -2,32 +2,32 @@ const customAutomationTopics = [
     {
         title: "Développement sur mesure",
         description:
-            "Contenu à compléter sur la conception et le développement de solutions adaptées aux besoins spécifiques de l’entreprise.",
+            "Codefect conçoit des outils adaptés aux besoins ciblés de l’entreprise lorsque les solutions existantes ne permettent pas de répondre correctement aux usages attendus. L’objectif est de proposer une réponse concrète, pensée en fonction du contexte, des contraintes et des priorités métiers.",
     },
     {
-        title: "Automatisation des processus",
+        title: "Fonctionnalités spécifiques",
         description:
-            "Contenu à compléter sur l’automatisation des tâches récurrentes, l’optimisation des flux et la réduction des actions manuelles.",
+            "Codefect intervient lorsque certaines fonctionnalités nécessaires ne sont pas disponibles dans les outils déjà en place. Cette approche permet de compléter l’existant avec des développements adaptés, sans imposer de changement global inutile dans l’environnement de travail.",
     },
     {
-        title: "Intégration d’outils et de services",
+        title: "Génération de rapports sur mesure",
         description:
-            "Contenu à compléter sur l’interconnexion des applications, des services et des outils métiers afin de fluidifier les usages.",
+            "Codefect accompagne la création de rapports personnalisés afin de répondre à des besoins précis de suivi, d’analyse ou de pilotage. Les restitutions sont construites selon les attentes réelles de l’entreprise, afin de rendre les données plus exploitables et plus utiles au quotidien.",
+    },
+    {
+        title: "Automatisation des tâches récurrentes",
+        description:
+            "Codefect met en place des automatisations pour limiter les actions répétitives, réduire les erreurs manuelles et faire gagner du temps aux équipes. Cette démarche permet d’améliorer la fiabilité des traitements tout en allégeant la charge opérationnelle.",
     },
     {
         title: "Adaptation aux besoins métiers",
         description:
-            "Contenu à compléter sur la prise en compte des contraintes opérationnelles, des usages internes et des objectifs de l’entreprise.",
+            "Chaque entreprise ayant son propre fonctionnement, Codefect construit des solutions qui tiennent compte des usages réels, des contraintes internes et des objectifs opérationnels. Le sur-mesure permet ainsi de répondre plus justement aux besoins sans imposer un cadre inadapté.",
     },
     {
         title: "Évolution et amélioration continue",
         description:
-            "Contenu à compléter sur les ajustements progressifs, les évolutions fonctionnelles et l’accompagnement dans la durée.",
-    },
-    {
-        title: "Fiabilité et gain d’efficacité",
-        description:
-            "Contenu à compléter sur la sécurisation des traitements, la réduction des erreurs et l’amélioration de la performance opérationnelle.",
+            "Les solutions développées peuvent évoluer avec l’activité et les nouveaux besoins identifiés. Codefect accompagne cette progression afin de faire vivre les outils dans le temps, sans remettre en cause l’ensemble de l’existant à chaque évolution.",
     },
 ];
 
@@ -50,8 +50,9 @@ export default function SurMesureAutomatisationPage() {
                         <p className="max-w-3xl text-lg leading-8 text-[var(--color-text-soft)]">
                             Codefect accompagne les entreprises dans la création de
                             solutions sur mesure et dans l’automatisation de leurs
-                            processus afin de gagner en efficacité, en fiabilité et
-                            en cohérence opérationnelle.
+                            processus afin de répondre à des besoins ciblés,
+                            d’améliorer l’efficacité opérationnelle et de faire
+                            évoluer les outils selon les usages réels.
                         </p>
                     </div>
                 </div>
@@ -94,14 +95,15 @@ export default function SurMesureAutomatisationPage() {
                         </p>
 
                         <h2 className="mb-6 text-3xl font-bold leading-tight md:text-4xl">
-                            Des solutions pensées pour s’adapter réellement à l’activité.
+                            Des solutions construites autour des besoins réels.
                         </h2>
 
                         <p className="leading-8 text-[var(--color-text-soft)]">
                             Codefect accompagne ses clients dans la mise en place
-                            de solutions sur mesure et d’automatisations adaptées à
-                            leurs usages, à leurs contraintes et à leurs objectifs,
-                            afin de structurer durablement leur fonctionnement.
+                            d’outils ciblés, évolutifs et adaptés à leur activité,
+                            afin de répondre plus précisément aux besoins non couverts
+                            par les solutions standard et d’automatiser les tâches à
+                            faible valeur ajoutée.
                         </p>
                     </div>
                 </div>
