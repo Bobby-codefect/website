@@ -15,6 +15,7 @@ const navigationLinks = [
 const serviceLinks = [
     { href: "/services/infrastructure", label: "Infrastructure" },
     { href: "/services/cybersecurite", label: "Cybersécurité" },
+    { href: "/services/sur-mesure-automatisation", label: "Sur-Mesure et Automatisation" },
 ];
 
 export default function Header() {
