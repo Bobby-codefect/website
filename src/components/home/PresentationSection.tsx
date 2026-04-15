@@ -19,7 +19,7 @@ export default function PresentationSection() {
                         <div className="h-1.5 w-24 rounded-full bg-[var(--color-accent-gold-strong)]" />
                     </div>
 
-                    <div className="rounded-3xl border border-[var(--color-border-soft)] bg-[var(--color-surface-light)] p-8 shadow-sm">
+                    <div className="rounded-3xl border border-[var(--color-border-soft)] bg-white p-8 shadow-sm">
                         <p className="text-lg leading-8 text-[var(--color-text-soft)]">
                             {texte}
                         </p>
