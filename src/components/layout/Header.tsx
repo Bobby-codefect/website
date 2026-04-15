@@ -16,6 +16,7 @@ const serviceLinks = [
     { href: "/services/infrastructure", label: "Infrastructure" },
     { href: "/services/cybersecurite", label: "Cybersécurité" },
     { href: "/services/sur-mesure-automatisation", label: "Sur-Mesure et Automatisation" },
+    { href: "/services/informatique-responsable", label: "Informatique responsable" },
 ];
 
 export default function Header() {
