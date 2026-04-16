@@ -6,7 +6,7 @@ export default function WhySection() {
     return (
         <section className="bg-[var(--color-bg-light)] text-[var(--color-text-dark)]">
             <div className="mx-auto max-w-7xl px-6 pb-20">
-                <div className="rounded-3xl border border-[var(--color-border-soft)] bg-white p-8 shadow-sm md:p-10">
+                <div className="rounded-3xl border border-[var(--color-border-soft)] bg-[var(--color-card-bg)] p-8 shadow-sm md:p-10">
                     <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-accent-blue)]">
                         Pourquoi
                     </p>

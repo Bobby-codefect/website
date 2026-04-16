@@ -64,7 +64,7 @@ export default function CybersecuriteV31Page() {
                             {cybersecurityTopics.map((topic) => (
                                 <article
                                     key={topic.title}
-                                    className="rounded-3xl border border-[var(--color-border-soft)] bg-white p-8 shadow-sm"
+                                    className="rounded-3xl border border-[var(--color-border-soft)] bg-[var(--color-card-bg)] p-8 shadow-sm"
                                 >
                                     <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-[var(--color-accent-blue)]">
                                         Domaine

@@ -6,7 +6,7 @@ type ServiceCardProps = {
 
 export default function ServiceCard({ categorie }: ServiceCardProps) {
     return (
-        <article className="rounded-3xl border border-[var(--color-border-soft)] bg-[var(--color-surface-light)] p-8 shadow-sm">
+        <article className="rounded-3xl border border-[var(--color-border-soft)] bg-[var(--color-card-bg)] p-8 shadow-sm">
             <div className="mb-6">
                 <h2 className="text-2xl font-bold text-[var(--color-text-dark)]">
                     {categorie.titre}

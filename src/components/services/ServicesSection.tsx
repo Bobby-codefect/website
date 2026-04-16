@@ -29,7 +29,7 @@ export default function ServicesSection() {
                     ))}
                 </div>
 
-                <div className="mt-20 rounded-3xl border border-[var(--color-border-soft)] bg-[var(--color-surface-light)] p-8 shadow-sm md:p-10">
+                <div className="mt-20 rounded-3xl border border-[var(--color-border-soft)] bg-[var(--color-card-bg)] p-8 shadow-sm md:p-10">
                     <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-accent-blue)]">
                         Besoin spécifique
                     </p>

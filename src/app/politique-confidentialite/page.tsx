@@ -2,7 +2,8 @@ export default function PolitiqueConfidentialitePage() {
     return (
         <section className="bg-[var(--color-bg-light)] text-[var(--color-text-dark)]">
             <div className="mx-auto max-w-5xl px-6 py-20">
-                <div className="rounded-3xl border border-[var(--color-border-soft)] bg-[var(--color-surface-light)] p-8 shadow-sm md:p-10">
+                {/* <div className="rounded-3xl border border-[var(--color-border-soft)] bg-[var(--color-surface-light)] p-8 shadow-sm md:p-10"> */}
+                <div className="rounded-3xl border border-[var(--color-border-soft)] bg-[var(--color-card-bg)] p-8 shadow-sm md:p-10">
                     <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-accent-blue)]">
                         Données personnelles
                     </p>
