@@ -100,7 +100,7 @@ export default function Header() {
                                                                 className={`block rounded-xl px-4 py-3 text-base font-medium transition ${
                                                                     isSubActive
                                                                         ? "bg-[var(--color-bg-dark)] text-white"
-                                                                        : "text-[var(--color-text-soft)] hover:bg-[var(--color-bg-light)] hover:text-[var(--color-text-dark)]"
+                                                                        : "text-[var(--color-text-soft)] hover:bg-[var(--color-accent-blue)] hover:text-white"
                                                                 }`}
                                                             >
                                                                 {serviceLink.label}

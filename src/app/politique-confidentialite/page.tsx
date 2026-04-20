@@ -38,7 +38,10 @@ export default function PolitiqueConfidentialitePage() {
                             </p>
                             <ul className="mt-4 space-y-2 leading-7">
                                 <li>Nom</li>
+                                <li>Prénom</li>
+                                <li>Société</li>
                                 <li>Adresse e-mail</li>
+                                <li>Numéro de téléphone</li>
                                 <li>Contenu du message</li>
                             </ul>
                         </section>

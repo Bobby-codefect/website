@@ -21,15 +21,15 @@ export default function MentionsLegalesPage() {
                             </h2>
 
                             <div className="space-y-2 leading-7">
-                                <p>Codefect</p>
+                                <p>Dénomination sociale : <b>Codefect</b></p>
                                 <p>Forme juridique : [À compléter]</p>
+                                <p>Capital social : [À compléter]</p>
                                 <p>Siège social : [À compléter]</p>
-                                <p>SIREN / SIRET : [À compléter]</p>
-                                <p>RCS : [À compléter]</p>
-                                <p>TVA intracommunautaire : [À compléter si applicable]</p>
                                 <p>E-mail : [À compléter]</p>
                                 <p>Téléphone : [À compléter]</p>
+                                <p>RCS + ville du greffe : [À compléter]</p>
                                 <p>Directeur de la publication : [À compléter]</p>
+                                <p>TVA intracommunautaire : [À compléter si applicable]</p>
                             </div>
                         </section>
 
