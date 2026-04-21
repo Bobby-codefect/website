@@ -29,14 +29,14 @@ export default function GoalsSection() {
                             className="rounded-3xl border border-[var(--color-border-soft)] bg-[var(--color-card-bg)] p-6 shadow-sm"
                         >
                             <div className="mb-5 flex items-center gap-4">
-                                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--color-accent-blue)] bg-[var(--color-bg-dark)] text-sm font-bold text-[var(--color-accent-gold-strong)]">
+                                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--color-accent-blue)] bg-[var(--color-bg-dark)] text-[length:var(--font-size-card-number)] font-bold text-[var(--color-accent-gold-strong)]">
                                     {index + 1}
                                 </div>
 
                                 <div className="h-px flex-1 bg-[var(--color-border-soft)]" />
                             </div>
 
-                            <p className="leading-7 text-[var(--color-text-soft)]">
+                            <p className="text-lg leading-7 text-[var(--color-text-soft)]">
                                 {item}
                             </p>
                         </article>

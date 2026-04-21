@@ -31,11 +31,11 @@ export default function PositioningSection() {
                         <ul className="space-y-5">
                             {points.map((point, index) => (
                                 <li key={point} className="flex items-start gap-4">
-                                    <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[var(--color-accent-blue)] bg-[var(--color-bg-dark)] text-xs font-bold text-[var(--color-accent-gold-strong)]">
+                                    <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[var(--color-accent-blue)] bg-[var(--color-bg-dark)] text-[length:var(--font-size-card-number)] font-bold text-[var(--color-accent-gold-strong)]">
                                         {index + 1}
                                     </div>
 
-                                    <p className="leading-7 text-[var(--color-text-soft)]">
+                                    <p className="text-lg leading-7 text-[var(--color-text-soft)]">
                                         {point}
                                     </p>
                                 </li>

@@ -27,7 +27,7 @@ export default function ServiceCard({ categorie }: ServiceCardProps) {
                                 {bloc.points.map((point) => (
                                     <li key={point} className="flex items-start gap-3">
                                         <span className="mt-2.5 h-2.5 w-2.5 shrink-0 rounded-full bg-[var(--color-accent-gold-strong)]" />
-                                        <span className="leading-7 text-[var(--color-text-soft)]">
+                                        <span className="text-lg leading-7 text-[var(--color-text-soft)]">
                                             {point}
                                         </span>
                                     </li>

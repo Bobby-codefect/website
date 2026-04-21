@@ -67,7 +67,7 @@ export default function SurMesureAutomatisationPage() {
 
                                     <div className="mb-6 h-1.5 w-20 rounded-full bg-[var(--color-accent-gold-strong)]" />
 
-                                    <p className="leading-8 text-[var(--color-text-soft)]">
+                                    <p className="text-lg leading-8 text-[var(--color-text-soft)]">
                                         {topic.description}
                                     </p>
                                 </article>
@@ -88,7 +88,7 @@ export default function SurMesureAutomatisationPage() {
                             Des solutions construites autour des besoins réels.
                         </h2>
 
-                        <p className="leading-8 text-[var(--color-text-soft)]">
+                        <p className="text-lg leading-8 text-[var(--color-text-soft)]">
                             Codefect accompagne ses clients dans la mise en place
                             d’outils ciblés, évolutifs et adaptés à leur activité,
                             afin de répondre plus précisément aux besoins non couverts

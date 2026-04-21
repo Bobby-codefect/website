@@ -76,7 +76,7 @@ export default function InfrastructureV2Page() {
 
                                     <div className="mb-6 h-1.5 w-20 rounded-full bg-[var(--color-accent-gold-strong)]" />
 
-                                    <p className="leading-8 text-[var(--color-text-soft)]">
+                                    <p className="text-lg leading-8 text-[var(--color-text-soft)]">
                                         {topic.description}
                                     </p>
                                 </article>
@@ -97,7 +97,7 @@ export default function InfrastructureV2Page() {
                             Une infrastructure conçue pour soutenir durablement l’activité.
                         </h2>
 
-                        <p className="leading-8 text-[var(--color-text-soft)]">
+                        <p className="text-lg leading-8 text-[var(--color-text-soft)]">
                             Codefect accompagne ses clients dans la mise en place
                             d’une infrastructure cohérente, évolutive et résiliente,
                             pensée pour répondre aux besoins techniques, métiers et

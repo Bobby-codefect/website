@@ -67,7 +67,7 @@ export default function InformatiqueResponsablePage() {
 
                                     <div className="mb-6 h-1.5 w-20 rounded-full bg-[var(--color-accent-gold-strong)]" />
 
-                                    <p className="leading-8 text-[var(--color-text-soft)]">
+                                    <p className="text-lg leading-8 text-[var(--color-text-soft)]">
                                         {topic.description}
                                     </p>
                                 </article>
@@ -88,7 +88,7 @@ export default function InformatiqueResponsablePage() {
                             Une informatique pensée pour durer et mieux répondre aux usages.
                         </h2>
 
-                        <p className="leading-8 text-[var(--color-text-soft)]">
+                        <p className="text-lg leading-8 text-[var(--color-text-soft)]">
                             Codefect accompagne ses clients dans des choix
                             informatiques plus mesurés, plus adaptés et plus
                             évolutifs, afin de construire des environnements

@@ -76,7 +76,7 @@ export default function CybersecuriteV31Page() {
 
                                     <div className="mb-6 h-1.5 w-20 rounded-full bg-[var(--color-accent-gold-strong)]" />
 
-                                    <p className="leading-8 text-[var(--color-text-soft)]">
+                                    <p className="text-lg leading-8 text-[var(--color-text-soft)]">
                                         {topic.description}
                                     </p>
                                 </article>
