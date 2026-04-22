@@ -23,7 +23,7 @@ export default function ServicesSection() {
                     </p>
                 </div>
 
-                <div className="grid gap-8 xl:grid-cols-2">
+                <div className="columns-1 gap-8 xl:columns-2">
                     {services.map((categorie) => (
                         <ServiceCard key={categorie.id} categorie={categorie} />
                     ))}
