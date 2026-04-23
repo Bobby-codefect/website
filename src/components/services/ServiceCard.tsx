@@ -24,13 +24,13 @@ export default function ServiceCard({ categorie }: ServiceCardProps) {
     const afficherBouton = nombreTotalDePoints > 2;
 
     return (
-        <article className="mb-6 break-inside-avoid rounded-3xl border border-[var(--color-border-soft)] bg-[var(--color-card-bg)] p-6 shadow-sm">
+        <article className="mb-6 break-inside-avoid rounded-3xl border border-(--color-border-soft) bg-(--color-card-bg) p-6 shadow-sm">
             <div className="mb-5">
-                <h2 className="text-xl font-bold text-[var(--color-text-dark)]">
+                <h2 className="text-xl font-bold text-(--color-text-dark)">
                     {categorie.titre}
                 </h2>
 
-                <div className="mt-3 h-1.5 w-16 rounded-full bg-[var(--color-accent-gold-strong)]" />
+                <div className="mt-3 h-1.5 w-16 rounded-full bg-(--color-accent-gold-strong)" />
             </div>
 
             <div className="space-y-6">
@@ -39,7 +39,7 @@ export default function ServiceCard({ categorie }: ServiceCardProps) {
 
                     return (
                         <div key={bloc.titre}>
-                            <h3 className="mb-3 text-base font-semibold text-[var(--color-text-soft)]">
+                            <h3 className="mb-3 text-base font-semibold text-(--color-text-soft)">
                                 {bloc.titre}
                             </h3>
 
@@ -47,8 +47,8 @@ export default function ServiceCard({ categorie }: ServiceCardProps) {
                                 <ul className="space-y-2">
                                     {pointsVisibles.map((point) => (
                                         <li key={point} className="flex items-start gap-3">
-                                            <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[var(--color-accent-gold-strong)]" />
-                                            <span className="text-base leading-6 text-[var(--color-text-soft)]">
+                                            <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-(--color-accent-gold-strong)" />
+                                            <span className="text-base leading-6 text-(--color-text-soft)">
                                                 {point}
                                             </span>
                                         </li>
@@ -66,7 +66,7 @@ export default function ServiceCard({ categorie }: ServiceCardProps) {
                         type="button"
                         onClick={() => setEstOuverte((precedent) => !precedent)}
                         aria-expanded={estOuverte}
-                        className="rounded-full border border-[var(--color-border-soft)] px-4 py-2 text-sm font-medium text-[var(--color-text-dark)] transition hover:bg-[var(--color-surface-light)]"
+                        className="rounded-full border border-(--color-border-soft) px-4 py-2 text-sm font-medium text-(--color-text-dark) transition hover:bg-(--color-surface-light)"
                     >
                         {estOuverte ? "Réduire" : "En savoir plus"}
                     </button>

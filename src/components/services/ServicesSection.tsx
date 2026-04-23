@@ -1,5 +1,48 @@
-import ServiceCard from "@/components/services/ServiceCard";
+import ServiceFeatureSection from "@/components/services/ServiceFeatureSection";
 import { services } from "@/data/services";
+
+const servicesIllustrations = [
+    {
+        id: 1,
+        imageSrc: "/images/services/infrastructure.png",
+        imageAlt: "Illustration infrastructure",
+        imageLeft: false,
+        description:
+            "Codefect accompagne les entreprises dans l’organisation, le déploiement et le suivi de leur environnement technique.",
+    },
+    {
+        id: 2,
+        imageSrc: "/images/services/cybersecurite.png",
+        imageAlt: "Illustration cybersécurité",
+        imageLeft: true,
+        description:
+            "La cybersécurité s’intègre dès la conception afin de mieux protéger les accès, les données et les usages.",
+    },
+    {
+        id: 3,
+        imageSrc: "/images/services/conseil-audit.png",
+        imageAlt: "Illustration conseil et audit",
+        imageLeft: false,
+        description:
+            "Codefect aide à analyser l’existant, identifier les axes d’amélioration et accompagner les décisions techniques.",
+    },
+    {
+        id: 4,
+        imageSrc: "/images/services/sur-mesure.png",
+        imageAlt: "Illustration sur-mesure",
+        imageLeft: true,
+        description:
+            "Des développements ciblés peuvent être mis en place pour répondre à des besoins métier spécifiques.",
+    },
+    {
+        id: 5,
+        imageSrc: "/images/services/transparence.png",
+        imageAlt: "Illustration transparence",
+        imageLeft: false,
+        description:
+            "Un suivi clair permet de mieux visualiser l’activité, les tickets et l’avancement des actions en cours.",
+    },
+];
 
 export default function ServicesSection() {
     return (
@@ -22,14 +65,33 @@ export default function ServicesSection() {
                         sur-mesure et de la transparence de suivi.
                     </p>
                 </div>
+            </div>
 
-                <div className="columns-1 gap-8 xl:columns-2">
-                    {services.map((categorie) => (
-                        <ServiceCard key={categorie.id} categorie={categorie} />
-                    ))}
-                </div>
+            <div>
+                {services.map((categorie) => {
+                    const illustration = servicesIllustrations.find(
+                        (item) => item.id === categorie.id
+                    );
 
-                <div className="mt-20 rounded-3xl border border-[var(--color-border-soft)] bg-[var(--color-card-bg)] p-8 shadow-sm md:p-10">
+                    if (!illustration) {
+                        return null;
+                    }
+
+                    return (
+                        <ServiceFeatureSection
+                            key={categorie.id}
+                            categorie={categorie}
+                            imageSrc={illustration.imageSrc}
+                            imageAlt={illustration.imageAlt}
+                            imageLeft={illustration.imageLeft}
+                            description={illustration.description}
+                        />
+                    );
+                })}
+            </div>
+
+            <div className="mx-auto max-w-7xl px-6 pb-20 pt-8">
+                <div className="rounded-3xl border border-[var(--color-border-soft)] bg-[var(--color-card-bg)] p-8 shadow-sm md:p-10">
                     <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-accent-blue)]">
                         Besoin spécifique
                     </p>
