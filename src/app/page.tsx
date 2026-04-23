@@ -5,11 +5,13 @@ import ValuesSection from "@/components/home/ValuesSection";
 import PositioningSection from "@/components/home/PositioningSection";
 import GoalsSection from "@/components/home/GoalsSection";
 import FinalCtaSection from "@/components/home/FinalCtaSection";
+import AiSlide from "@/components/home/AiSlide"
 
 export default function HomePage() {
     return (
         <>
             <HeroSection />
+            {/* <AiSlide/> */}
             <PresentationSection />
             <WhySection />
             <ValuesSection />
