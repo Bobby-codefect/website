@@ -1,4 +1,4 @@
-import HeroSection from "@/components/home/HeroSection";
+import HeroWave from "@/components/home/HeroWave";
 import PresentationSection from "@/components/home/PresentationSection";
 import WhySection from "@/components/home/WhySection";
 import ValuesSection from "@/components/home/ValuesSection";
@@ -9,7 +9,7 @@ import FinalCtaSection from "@/components/home/FinalCtaSection";
 export default function HomePage() {
     return (
         <>
-            <HeroSection />
+            <HeroWave />
             <PresentationSection />
             <WhySection />
             <ValuesSection />

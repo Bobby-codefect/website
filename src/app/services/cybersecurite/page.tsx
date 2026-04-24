@@ -1,3 +1,5 @@
+import CyberAnimationCard from "@/components/services/CyberAnimationCard";
+
 const cybersecurityTopics = [
     {
         title: "Audit et Conseil",
@@ -82,6 +84,43 @@ export default function CybersecuriteV31Page() {
                                 </article>
                             ))}
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="bg-[var(--color-bg-light)] text-[var(--color-text-dark)]">
+                <div className="mx-auto max-w-7xl px-6 py-20">
+                    <div className="mb-12 max-w-4xl">
+                        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-accent-blue)]">
+                            Protection
+                        </p>
+
+                        <h2 className="mb-6 text-3xl font-bold leading-tight md:text-4xl">
+                            Une sécurité qui s'active quand vous en avez besoin
+                        </h2>
+
+                        <div className="mb-8 h-1.5 w-24 rounded-full bg-[var(--color-accent-gold-strong)]" />
+
+                        <p className="text-lg leading-8 text-[var(--color-text-soft)]">
+                            Explorez nos domaines de cybersécurité en cliquant sur les cartes
+                            ci-dessous. Chaque domaine représente une facette essentielle de
+                            la protection de votre infrastructure.
+                        </p>
+                    </div>
+
+                    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                        <CyberAnimationCard
+                            title="Audit & Conseil"
+                            description="Analyse approfondie de votre infrastructure, identification des risques et recommandations stratégiques pour renforcer votre posture de sécurité."
+                        />
+                        <CyberAnimationCard
+                            title="Processus & Documentation"
+                            description="Formalisation des procédures de sécurité, création de politiques adaptées et documentation des bonnes pratiques."
+                        />
+                        <CyberAnimationCard
+                            title="Services Opérationnels"
+                            description="Prestations concrètes de protection, sécurisation des accès, gestion des authentifications et défense contre les menaces."
+                        />
                     </div>
                 </div>
             </section>

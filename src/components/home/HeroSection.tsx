@@ -25,7 +25,7 @@ export default function HeroSection() {
                         <div className="flex flex-col gap-4 sm:flex-row">
                             <a
                                 href="/contact"
-                                className="rounded-md bg-[var(--color-accent-gold)] px-6 py-3 text-center font-semibold text-[var(--color-bg-dark)] transition hover:bg-[var(--color-accent-gold-strong)]"
+                                className="rounded-md bg-[var(--color-accent-gold-strong)] px-6 py-3 text-center font-semibold text-[var(--color-bg-dark)] transition hover:bg-[var(--color-accent-gold)]"
                             >
                                 {boutonPrincipal}
                             </a>

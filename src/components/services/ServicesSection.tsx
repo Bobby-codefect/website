@@ -110,7 +110,7 @@ export default function ServicesSection() {
 
                     <a
                         href="/contact"
-                        className="inline-block rounded-md bg-[var(--color-accent-gold)] px-6 py-3 font-semibold text-[var(--color-bg-dark)] transition hover:bg-[var(--color-accent-gold-strong)]"
+                        className="inline-block rounded-md bg-[var(--color-accent-gold-strong)] px-6 py-3 font-semibold text-[var(--color-bg-dark)] transition hover:bg-[var(--color-accent-gold)]"
                     >
                         Nous contacter
                     </a>
