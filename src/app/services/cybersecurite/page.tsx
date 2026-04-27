@@ -36,10 +36,10 @@ const cybersecurityTopics = [
 export default function CybersecuriteV31Page() {
     return (
         <>
-            <section className="bg-[var(--color-bg-light)] text-[var(--color-text-dark)]">
+            <section className="bg-(--color-bg-light) text(--color-text-dark)">
                 <div className="mx-auto max-w-7xl px-6 py-20">
                     <div className="max-w-4xl">
-                        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-accent-blue)]">
+                        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-(--color-accent-blue)">
                             Services
                         </p>
 
@@ -47,9 +47,9 @@ export default function CybersecuriteV31Page() {
                             Cybersécurité
                         </h1>
 
-                        <div className="mb-8 h-1.5 w-24 rounded-full bg-[var(--color-accent-gold-strong)]" />
+                        <div className="mb-8 h-1.5 w-24 rounded-full bg-(--color-accent-gold-strong)" />
 
-                        <p className="max-w-3xl text-lg leading-8 text-[var(--color-text-soft)]">
+                        <p className="max-w-3xl text-lg leading-8 text-(--color-text-soft)">
                             Codefect accompagne les entreprises sur les enjeux de
                             cybersécurité en combinant audit, organisation,
                             architecture et services opérationnels adaptés à leur
@@ -66,19 +66,19 @@ export default function CybersecuriteV31Page() {
                             {cybersecurityTopics.map((topic) => (
                                 <article
                                     key={topic.title}
-                                    className="rounded-3xl border border-[var(--color-border-soft)] bg-[var(--color-card-bg)] p-8 shadow-sm"
+                                    className="rounded-3xl border border-(--color-border-soft) bg-(--color-card-bg) p-8 shadow-sm"
                                 >
-                                    <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-[var(--color-accent-blue)]">
+                                    <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-(--color-accent-blue)">
                                         Domaine
                                     </p>
 
-                                    <h2 className="mb-4 text-2xl font-bold leading-tight text-[var(--color-text-dark)]">
+                                    <h2 className="mb-4 text-2xl font-bold leading-tight text-(--color-text-dark)">
                                         {topic.title}
                                     </h2>
 
-                                    <div className="mb-6 h-1.5 w-20 rounded-full bg-[var(--color-accent-gold-strong)]" />
+                                    <div className="mb-6 h-1.5 w-20 rounded-full bg-(--color-accent-gold-strong)" />
 
-                                    <p className="text-lg leading-8 text-[var(--color-text-soft)]">
+                                    <p className="text-lg leading-8 text-(--color-text-soft)">
                                         {topic.description}
                                     </p>
                                 </article>
@@ -88,10 +88,10 @@ export default function CybersecuriteV31Page() {
                 </div>
             </section>
 
-            <section className="bg-[var(--color-bg-light)] text-[var(--color-text-dark)]">
+            <section className="bg-(--color-bg-light) text-(--color-text-dark)">
                 <div className="mx-auto max-w-7xl px-6 py-20">
                     <div className="mb-12 max-w-4xl">
-                        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-accent-blue)]">
+                        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-(--color-accent-blue)">
                             Protection
                         </p>
 
@@ -99,9 +99,9 @@ export default function CybersecuriteV31Page() {
                             Une sécurité qui s'active quand vous en avez besoin
                         </h2>
 
-                        <div className="mb-8 h-1.5 w-24 rounded-full bg-[var(--color-accent-gold-strong)]" />
+                        <div className="mb-8 h-1.5 w-24 rounded-full bg-(--color-accent-gold-strong)" />
 
-                        <p className="text-lg leading-8 text-[var(--color-text-soft)]">
+                        <p className="text-lg leading-8 text-(--color-text-soft)">
                             Explorez nos domaines de cybersécurité en cliquant sur les cartes
                             ci-dessous. Chaque domaine représente une facette essentielle de
                             la protection de votre infrastructure.
@@ -125,10 +125,10 @@ export default function CybersecuriteV31Page() {
                 </div>
             </section>
 
-            <section className="bg-[var(--color-bg-light)] text-[var(--color-text-dark)]">
+            <section className="bg-(--color-bg-light) text-(--color-text-dark)">
                 <div className="mx-auto max-w-7xl px-6 py-16">
                     <div className="max-w-3xl">
-                        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-accent-gold-strong)]">
+                        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-(--color-accent-gold-strong)">
                             Approche
                         </p>
 
@@ -136,7 +136,7 @@ export default function CybersecuriteV31Page() {
                             Une cybersécurité pensée pour durer.
                         </h2>
 
-                        <p className="leading-8 text-[var(--color-text-soft)]">
+                        <p className="leading-8 text-(--color-text-soft)">
                             Codefect accompagne ses clients dans la construction
                             d’une sécurité cohérente, progressive et adaptée à leur
                             environnement technique, organisationnel et humain.
