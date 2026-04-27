@@ -1,4 +1,4 @@
-import ContactForm from "@/components/contact/ContactForm";
+import ContactFormV2 from "@/components/contact/ContactFormV2";
 
 export default function ContactSection() {
     return (
@@ -13,7 +13,7 @@ export default function ContactSection() {
                         Échangeons autour de vos besoins numériques.
                     </h1>
 
-                    <div className="mb-8 h-1.5 w-24 rounded-full bg-(--color-accent-gold-strong)" />
+                    <div className="mb-8 h-1.5 w-24 bg-(--color-accent-gold-strong)" />
 
                     <p className="text-lg leading-8 text-(-color-text-soft)">
                         Vous avez un besoin, une question ou un projet ? Contactez Codefect
@@ -23,7 +23,7 @@ export default function ContactSection() {
                 </div>
 
                 <div className="max-w-5xl">
-                    <ContactForm />
+                    <ContactFormV2 />
                 </div>
             </div>
         </section>

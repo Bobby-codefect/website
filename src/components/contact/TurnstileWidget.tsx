@@ -19,6 +19,7 @@ declare global {
                     "expired-callback"?: () => void;
                     "error-callback"?: () => void;
                     size?: "normal" | "compact" | "flexible";
+                    theme?: "auto" | "light" | "dark";
                 }
             ) => void;
         };
@@ -46,6 +47,7 @@ export default function TurnstileWidget({
 
         window.turnstile.render(element, {
             sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "",
+            theme: "light",
             size: isMobile ? "compact" : "normal",
             callback: (token: string) => {
                 onSuccess(token);
