@@ -176,7 +176,7 @@ export default function ContactForm() {
                         htmlFor="telephone"
                         className="mb-2 block text-base font-semibold text-(--color-text-soft)"
                     >
-                        Tél *
+                        Téléphone *
                     </label>
                     <input
                         id="telephone"

@@ -148,7 +148,7 @@ export default function ContactForm() {
                         type="text"
                         value={formData.societe}
                         onChange={handleChange}
-                        className="w-full border border-(--color-border-soft) bg-(--color-input-bg) px-4 py-3 text-(--color-text-dark) outline-none transition placeholder:text-[#7e8b99] focus:border-(--color-accent-blue)"
+                        className="w-full rounded-md border border-(--color-border-soft) bg-(--color-input-bg) px-4 py-3 text-(--color-text-dark) outline-none transition placeholder:text-[#7e8b99] focus:border-(--color-accent-blue)"
                         placeholder="Votre société"
                     />
                 </div>
@@ -166,7 +166,7 @@ export default function ContactForm() {
                         type="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full border border-(--color-border-soft) bg-(--color-input-bg) px-4 py-3 text-(--color-text-dark) outline-none transition placeholder:text-[#7e8b99] focus:border-(--color-accent-blue)"
+                        className="w-full rounded-md border border-(--color-border-soft) bg-(--color-input-bg) px-4 py-3 text-(--color-text-dark) outline-none transition placeholder:text-[#7e8b99] focus:border-(--color-accent-blue)"
                         placeholder="votre@email.com"
                     />
                 </div>
@@ -176,7 +176,7 @@ export default function ContactForm() {
                         htmlFor="telephone"
                         className="mb-2 block text-base font-semibold text-(--color-text-soft)"
                     >
-                        Tél *
+                        Téléphone *
                     </label>
                     <input
                         id="telephone"
@@ -184,7 +184,7 @@ export default function ContactForm() {
                         type="tel"
                         value={formData.telephone}
                         onChange={handleChange}
-                        className="w-full border border-(--color-border-soft) bg-(--color-input-bg) px-4 py-3 text-(--color-text-dark) outline-none transition placeholder:text-[#7e8b99] focus:border-(--color-accent-blue)"
+                        className="w-full rounded-md border border-(--color-border-soft) bg-(--color-input-bg) px-4 py-3 text-(--color-text-dark) outline-none transition placeholder:text-[#7e8b99] focus:border-(--color-accent-blue)"
                         placeholder="Votre numéro de téléphone"
                     />
                 </div>
@@ -203,7 +203,7 @@ export default function ContactForm() {
                     rows={6}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full border border-(--color-border-soft) bg-(--color-input-bg) px-4 py-3 text-(--color-text-dark) outline-none transition placeholder:text-[#7e8b99] focus:border-(--color-accent-blue)"
+                    className="w-full rounded-md border border-(--color-border-soft) bg-(--color-input-bg) px-4 py-3 text-(--color-text-dark) outline-none transition placeholder:text-[#7e8b99] focus:border-(--color-accent-blue)"
                     placeholder="Décrivez votre besoin"
                 />
             </div>
