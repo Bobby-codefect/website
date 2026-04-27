@@ -104,7 +104,7 @@ export default function ContactForm() {
                         htmlFor="nom"
                         className="mb-2 block text-base font-semibold text-[var(--color-text-soft)]"
                     >
-                        Nom
+                        Nom *
                     </label>
                     <input
                         id="nom"
@@ -122,7 +122,7 @@ export default function ContactForm() {
                         htmlFor="prenom"
                         className="mb-2 block text-base font-semibold text-[var(--color-text-soft)]"
                     >
-                        Prénom
+                        Prénom *
                     </label>
                     <input
                         id="prenom"
@@ -140,7 +140,7 @@ export default function ContactForm() {
                         htmlFor="societe"
                         className="mb-2 block text-base font-semibold text-[var(--color-text-soft)]"
                     >
-                        Société
+                        Société *
                     </label>
                     <input
                         id="societe"
@@ -158,7 +158,7 @@ export default function ContactForm() {
                         htmlFor="email"
                         className="mb-2 block text-base font-semibold text-[var(--color-text-soft)]"
                     >
-                        Mail
+                        Email *
                     </label>
                     <input
                         id="email"
@@ -176,7 +176,7 @@ export default function ContactForm() {
                         htmlFor="telephone"
                         className="mb-2 block text-base font-semibold text-[var(--color-text-soft)]"
                     >
-                        Tél
+                        Téléphone *
                     </label>
                     <input
                         id="telephone"
@@ -195,7 +195,7 @@ export default function ContactForm() {
                     htmlFor="message"
                     className="mb-2 block text-base font-semibold text-[var(--color-text-soft)]"
                 >
-                    Message
+                    Message *
                 </label>
                 <textarea
                     id="message"

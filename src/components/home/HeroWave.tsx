@@ -22,17 +22,17 @@ const HeroWave = () => {
                 {description}
               </p>
 
-              <div className="flex flex-col gap-3 sm:flex-row">
+              <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-start">
                 <a
                     href="/contact"
-                    className="rounded-md bg-[var(--color-accent-gold-strong)] px-6 py-3 text-center font-semibold text-[var(--color-bg-dark)] transition hover:bg-[var(--color-accent-gold)]"
+                    className="inline-flex min-w-[220px] justify-center rounded-md bg-[var(--color-accent-gold-strong)] px-4 py-3 text-center font-semibold text-[var(--color-bg-dark)] transition hover:bg-[var(--color-accent-gold)]"
                 >
                   {boutonPrincipal}
                 </a>
 
                 <a
                     href="/services"
-                    className="rounded-md border border-[var(--color-border-soft)] px-6 py-3 text-center font-semibold text-white transition hover:bg-[var(--color-surface-dark)]"
+                    className="inline-flex min-w-[220px] justify-center rounded-md border border-[var(--color-border-soft)] px-4 py-3 text-center font-semibold text-white transition hover:bg-[var(--color-surface-dark)]"
                 >
                   {boutonSecondaire}
                 </a>
