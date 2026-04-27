@@ -144,7 +144,8 @@ export default function Header() {
                 <button
                     type="button"
                     onClick={toggleMobileMenu}
-                    className="rounded-md border border-[var(--color-accent-blue)] p-2 text-white transition hover:bg-[var(--color-surface-dark)] md:hidden"
+                    className="rounded-md border border-[var(--color-accent-blue)]
+                    p-2 text-white transition hover:bg-[var(--color-surface-dark)] md:hidden"
                     aria-expanded={isMobileMenuOpen}
                     aria-controls="mobile-menu"
                     aria-label={isMobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}

@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 :root {
-    --color-bg-light: #eaf7fc;
+    /* --color-bg-light: #eaf7fc; */
+    --color-bg-light: #fafafa;
     --color-bg-dark: #17202a;
     --color-surface-dark: #1b364f;
     --color-accent-blue: #1e6585;
@@ -18,7 +19,10 @@
     --color-accent-gold-strong: #e29e21;
 
     --color-white: #f8fbfd;
-    --color-input-bg: #f8fbfd;
+    /* --color-input-bg: #f8fbfd; */
+    --color-input-bg: #fafafa;
+    --color-section-bg: #fafafa;
+    --color-section-white-bg: #f6f5f5;
     --color-text-dark: #17202a;
     --color-text-soft: #1b364f;
 

@@ -12,6 +12,10 @@ export function isPhoneValid(telephone: string) {
     return cleanedPhone.length >= 8 && cleanedPhone.length <= 15;
 }
 
+export function isNameValid(value: string) {
+    return !/\d/.test(value);
+}
+
 export function validateContactForm(data: ContactFormData) {
     const nom = data.nom.trim();
     const prenom = data.prenom.trim();
@@ -23,6 +27,14 @@ export function validateContactForm(data: ContactFormData) {
 
     if (!nom || !prenom || !societe || !email || !telephone || !message) {
         return "Tous les champs sont obligatoires.";
+    }
+
+    if (!isNameValid(nom)) {
+        return "Le nom ne doit pas contenir de chiffres.";
+    }
+
+    if (!isNameValid(prenom)) {
+        return "Le prénom ne doit pas contenir de chiffres.";
     }
 
     if (!isEmailValid(email)) {

@@ -45,7 +45,7 @@ export default function InfrastructureV2Page() {
                             Infrastructure
                         </h1>
 
-                        <div className="mb-8 h-1.5 w-24 rounded-full bg-(--color-accent-gold-strong)" />
+                        <div className="mb-8 h-1.5 w-24 bg-(--color-accent-gold-strong)" />
 
                         <p className="max-w-3xl text-lg leading-8 text-(--color-text-soft)">
                             Codefect accompagne les entreprises dans la conception,
@@ -58,14 +58,14 @@ export default function InfrastructureV2Page() {
             </section>
 
             <section className="text-(--color-text-dark)">
-                {/* <div className="bg-white"> */}
-                <div className="bg-(--color-section-bg)">
+                <div className="bg-(--color-section-white-bg)">
+                {/* <div className="bg-(--color-section-bg)"> */}
                     <div className="mx-auto max-w-7xl px-6 py-20">
                         <div className="grid gap-8 md:grid-cols-2">
                             {infrastructureTopics.map((topic) => (
                                 <article
                                     key={topic.title}
-                                    className="rounded-3xl border border-(--color-border-soft) bg-(--color-card-bg) p-8 shadow-sm"
+                                    className="bg-(--color-card-bg) p-8 shadow-sm"
                                 >
                                     <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-(--color-accent-blue)">
                                         Domaine
@@ -75,7 +75,7 @@ export default function InfrastructureV2Page() {
                                         {topic.title}
                                     </h2>
 
-                                    <div className="mb-6 h-1.5 w-20 rounded-full bg-(--color-accent-gold-strong)" />
+                                    <div className="mb-6 h-1.5 w-20 bg-(--color-accent-gold-strong)" />
 
                                     <p className="text-lg leading-8 text-(--color-text-soft)">
                                         {topic.description}
