@@ -45,7 +45,7 @@ export default function Header() {
     }
 
     return (
-        <header className="sticky top-0 z-50 border-b border-[var(--color-accent-blue)] bg-[var(--color-bg-dark)]/95 backdrop-blur">
+        <header className="sticky top-0 z-50 bg-[var(--color-bg-dark)]/95 backdrop-blur">
             
             {/* Wrapper principal */}
             <div className="flex items-center justify-between py-4">
