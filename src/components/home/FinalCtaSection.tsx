@@ -18,7 +18,7 @@ export default function FinalCtaSection() {
 
                         <div className="max-w-2xl">
                             <p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-[var(--color-accent-blue)]">
-                                Passons à l'action
+                                Passons à l&apos;action
                             </p>
                             <h2 className="mb-6 text-3xl font-extrabold leading-tight text-white md:text-4xl">
                                 {titre}

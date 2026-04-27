@@ -36,7 +36,7 @@ export default function WhySection() {
 
                         <div className="p-8 md:p-12">
                             <div className="mb-6 select-none text-6xl font-black leading-none text-[var(--color-accent-gold-strong)] opacity-20 transition-opacity duration-300 group-hover:opacity-35">
-                                "
+                                &quot;
                             </div>
                             <p className="max-w-3xl text-lg leading-8 text-[var(--color-text-soft)]">
                                 {texte}

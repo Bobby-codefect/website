@@ -96,7 +96,7 @@ export default function CybersecuriteV31Page() {
                         </p>
 
                         <h2 className="mb-6 text-3xl font-bold leading-tight md:text-4xl">
-                            Une sécurité qui s'active quand vous en avez besoin
+                            Une sécurité qui s&apos;active quand vous en avez besoin
                         </h2>
 
                         <div className="mb-8 h-1.5 w-24 rounded-full bg-(--color-accent-gold-strong)" />
